@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab8</title>
+  </head>
+  <body>
+    
+    
+        <div class="card-body">
+          <h5 class="card-title">Реалізація БД в СУБД</h5>
+          <img src="imglab/1.jpg">
+          <img src="imglab/2.jpg">
+          <img src="imglab/3.jpg">
+          <img src="imglab/4.jpg">
+          <img src="imglab/5.jpg">
+          <img src="imglab/6.jpg">
+          <img src="imglab/7.jpg">
+          <img src="imgbd/5.png">
+          <img src="imgbd/6.png">
+          <pre><code>
+            &lt;?php
+
+
+if(!empty($_POST['create'])){
+    if($_POST['create']==&quot;Створити таблиці&quot;) cr_tables();
+    }
+
+if(!empty($_POST['age'])){
+    add_client();
+    }
+
+function add_client(){
+$age=$_POST[&quot;age&quot;];
+$gender=$_POST[&quot;gender&quot;];
+$country=$_POST[&quot;country&quot;];
+$city=$_POST[&quot;city&quot;];
+$street=$_POST[&quot;street&quot;];
+
+  $con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+
+$query=&quot;INSERT IGNORE INTO CLIENTS(ID,AGE,GENDER,COUNTRY,CITY,STREET) VALUES (NULL,'$age','$gender','$country','$city','$street')&quot;;
+mysqli_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+}
+
+if(!empty($_POST['position'])){
+    add_employee();
+    }
+
+function add_employee(){
+$position=$_POST[&quot;position&quot;];
+$info=$_POST[&quot;info&quot;];
+$experience=$_POST[&quot;experience&quot;];
+
+
+  $con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+
+$query=&quot;INSERT IGNORE INTO EMPLOYEES(ID,POSITION,PERSONAL_INFO,WORK_EXPERIENCE) VALUES (NULL,'$position','$info','$experience')&quot;;
+mysqli_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+}
+
+if(!empty($_POST['mattype'])){
+    add_contractor();
+    }
+
+function add_contractor(){
+$type=$_POST[&quot;mattype&quot;];
+$price=$_POST[&quot;kgprice&quot;];
+
+
+  $con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+
+$query=&quot;INSERT IGNORE INTO CONTRACTORS(ID,TYPE_OF_RAW_MATERIAL,PRICE_PER_KG) VALUES (NULL,'$type','$price')&quot;;
+mysqli_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+}
+
+if(!empty($_POST['price'])){
+    add_product();
+    }
+
+
+function add_product(){
+$name=$_POST[&quot;prodname&quot;];
+$price=$_POST[&quot;price&quot;];
+$weight=$_POST[&quot;weight&quot;];
+$components=$_POST[&quot;components&quot;];
+$category=$_POST[&quot;category&quot;];
+
+
+  $con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+
+$query=&quot;
+INSERT IGNORE INTO CATEGORIES(ID,CATEGORY_TYPE) VALUES (NULL,'$category');
+INSERT IGNORE INTO PRODUCTS(ID,ID_CATEGORY_TYPE,NAME,PRICE,WEIGHT,COMPONENTS) VALUES (NULL,(SELECT ID FROM CATEGORIES WHERE CATEGORY_TYPE='$category'),'$name','$price','$weight','$components')&quot;;
+mysqli_multi_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+}
+
+function cr_tables(){
+
+$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+echo 'Connected!';
+
+$query = &quot;
+CREATE TABLE CLIENTS
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    AGE INT(3),
+    GENDER INT(1) DEFAULT 0 NOT NULL,
+    COUNTRY VARCHAR(32) NOT NULL,
+    CITY VARCHAR(32) NOT NULL,
+    STREET VARCHAR(32)
+);
+
+
+CREATE TABLE EMPLOYEES
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    POSITION varchar(32) NOT NULL,
+    PERSONAL_INFO varchar(64) NOT NULL,
+    WORK_EXPERIENCE INT(2) NOT NULL
+);
+
+CREATE TABLE CONTRACTORS
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    TYPE_OF_RAW_MATERIAL varchar(32) NOT NULL,
+    PRICE_PER_KG INT(10) NOT NULL
+);
+
+
+CREATE TABLE CATEGORIES
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    CATEGORY_TYPE varchar(32) NOT NULL
+);
+
+CREATE TABLE PRODUCTS
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ID_CATEGORY_TYPE INT(6) NOT NULL,
+    NAME varchar(15),
+    PRICE INT(10) NOT NULL,
+    WEIGHT INT(5) NOT NULL,
+    COMPONENTS varchar(64),
+    FOREIGN KEY (ID_CATEGORY_TYPE) REFERENCES CATEGORIES(ID)
+);
+
+CREATE TABLE PRODUCTIONS
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ID_EMPLOYEE INT(6) NOT NULL,
+    ID_PRODUCT INT(6) NOT NULL,
+    COUNT INT(6) NOT NULL,
+    FOREIGN KEY (ID_EMPLOYEE) REFERENCES EMPLOYEES(ID),
+    FOREIGN KEY (ID_PRODUCT) REFERENCES PRODUCTS(ID)
+
+);
+
+CREATE TABLE PURCHASES
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ID_CLIENT INT(6) NOT NULL,
+    ID_PRODUCT INT(6) NOT NULL,
+    ID_EMPLOYEE INT(6) NOT NULL,
+    WEIGHT INT(5) NOT NULL,
+    PRICE INT(10) NOT NULL,
+    FOREIGN KEY (ID_CLIENT) REFERENCES CLIENTS(ID),
+    FOREIGN KEY (ID_PRODUCT) REFERENCES PRODUCTS(ID),
+    FOREIGN KEY (ID_EMPLOYEE) REFERENCES EMPLOYEES(ID)
+);
+
+CREATE TABLE DELIVERY
+(
+    ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    ID_CONTRACTOR INT(6) NOT NULL,
+    ID_EMPLOYEE INT(6) NOT NULL,
+    COUNT_PRODUCT INT(10) NOT NULL,
+    DATE_CREATION DATE,
+    FOREIGN KEY (ID_CONTRACTOR) REFERENCES CONTRACTORS(ID),
+    FOREIGN KEY (ID_EMPLOYEE) REFERENCES EMPLOYEES(ID)
+);
+&quot;;
+
+
+if (mysqli_multi_query ($con, $query)) {
+    echo &quot;All Tables Created Successfully&quot;;
+} else {
+    echo &quot;Error creating table: &quot; . mysqli_error($con);
+}
+}
+
+if(!empty($_POST['select'])){
+    if($_POST['select']==&quot;Обрати&quot;) select();
+    }
+
+function select(){
+  $con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+
+$name=$_POST['itname'];
+
+$query=&quot;SELECT
+CATEGORIES.CATEGORY_TYPE AS 'Категорія',PRODUCTS.NAME as 'Назва', PRODUCTS.PRICE AS 'Ціна', PRODUCTS.WEIGHT AS 'Вага', PRODUCTS.COMPONENTS AS 'Компоненти' FROM CATEGORIES,PRODUCTS WHERE PRODUCTS.ID_CATEGORY_TYPE=CATEGORIES.ID AND PRODUCTS.NAME = '$name';
+&quot;;
+$result= mysqli_query($con,$query) or die(&quot;Couldn't Select&quot;);
+if (mysqli_num_rows($result) &gt; 0) {
+  $counter=1;
+    while($row = mysqli_fetch_assoc($result)) {
+        echo $counter.&quot;) Назва: &quot; . $row[&quot;Назва&quot;]. &quot;&lt;br&gt;Категорія: &quot; . $row[&quot;Категорія&quot;]. &quot;&lt;br&gt;Ціна: &quot; . $row[&quot;Ціна&quot;].&quot;&lt;br&gt;Вага: &quot;. $row[&quot;Вага&quot;].&quot;&lt;br&gt;Компоненти: &quot;. $row[&quot;Компоненти&quot;]. &quot;&lt;br&gt;&lt;br&gt;&quot;;
+        $fd = fopen(&quot;logs.txt&quot;, 'a') or die(&quot;не удалось создать файл&quot;);
+        $str = &quot;\nНазва: &quot; . $row[&quot;Назва&quot;]. &quot;\nКатегорія: &quot; . $row[&quot;Категорія&quot;]. &quot;\nЦіна: &quot; . $row[&quot;Ціна&quot;].&quot;\nВага: &quot;. $row[&quot;Вага&quot;].&quot;\nКомпоненти: &quot;. $row[&quot;Компоненти&quot;]. &quot;&quot;;
+        fwrite($fd, $str);
+    }
+}
+else{
+  echo &quot;За вашим запитом товарів не знайдено&quot;;
+}
+}
+?&gt;
+
+
+file(bd.php)
+         </code></pre>
+  </div>
+</body>
+</html>

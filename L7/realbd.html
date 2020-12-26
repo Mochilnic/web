@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="../L5/lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="../L6/lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+<div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad7.html">Постановка задачі лабораторної роботи 7</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="bd.html">Опис БД</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="realbd.html">Реалізація БД в СУБД</a>
+      </li>
+      <li class="nav-item">
+      <a class="mt-1 btn btn-outline-secondary" href="conc7.html">Висновок</a>
+    </li>
+  </ul><div class="mr-2 float-right" style="width: 70%; margin-top: -150px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Реалізація БД в СУБД</h5>
+          <img src="imglab/1.jpg">
+          <img src="imglab/2.jpg">
+          <img src="imglab/3.jpg">
+          <img src="imglab/4.jpg">
+          <img src="imglab/5.jpg">
+          <img src="imglab/6.jpg">
+          <img src="imglab/7.jpg">
+          <pre><code>
+            &lt;?php
+
+
+            if(!empty($_POST['create'])){
+            		if($_POST['create']==&quot;Створити таблиці&quot;) cr_tables();
+                }
+
+            if(!empty($_POST['age'])){
+            		add_client();
+                }
+
+            function add_client(){
+            $age=$_POST[&quot;age&quot;];
+            $gender=$_POST[&quot;gender&quot;];
+            $country=$_POST[&quot;country&quot;];
+            $city=$_POST[&quot;city&quot;];
+            $street=$_POST[&quot;street&quot;];
+
+            	$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+            mysqli_set_charset($con, &quot;utf8&quot;);
+
+            $query=&quot;INSERT IGNORE INTO CLIENTS(ID,AGE,GENDER,COUNTRY,CITY,STREET) VALUES (NULL,'$age','$gender','$country','$city','$street')&quot;;
+            mysqli_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+            }
+
+            if(!empty($_POST['position'])){
+            		add_employee();
+                }
+
+            function add_employee(){
+            $position=$_POST[&quot;position&quot;];
+            $info=$_POST[&quot;info&quot;];
+            $experience=$_POST[&quot;experience&quot;];
+
+
+            	$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+            mysqli_set_charset($con, &quot;utf8&quot;);
+
+            $query=&quot;INSERT IGNORE INTO EMPLOYEES(ID,POSITION,PERSONAL_INFO,WORK_EXPERIENCE) VALUES (NULL,'$position','$info','$experience')&quot;;
+            mysqli_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+            }
+
+            if(!empty($_POST['mattype'])){
+            		add_contractor();
+                }
+
+            function add_contractor(){
+            $type=$_POST[&quot;mattype&quot;];
+            $price=$_POST[&quot;kgprice&quot;];
+
+
+            	$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+            mysqli_set_charset($con, &quot;utf8&quot;);
+
+            $query=&quot;INSERT IGNORE INTO CONTRACTORS(ID,TYPE_OF_RAW_MATERIAL,PRICE_PER_KG) VALUES (NULL,'$type','$price')&quot;;
+            mysqli_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+            }
+
+            if(!empty($_POST['price'])){
+            		add_product();
+                }
+
+
+            function add_product(){
+            $name=$_POST[&quot;prodname&quot;];
+            $price=$_POST[&quot;price&quot;];
+            $weight=$_POST[&quot;weight&quot;];
+            $components=$_POST[&quot;components&quot;];
+            $category=$_POST[&quot;category&quot;];
+
+
+            	$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+            mysqli_set_charset($con, &quot;utf8&quot;);
+
+            $query=&quot;
+            INSERT IGNORE INTO CATEGORIES(ID,CATEGORY_TYPE) VALUES (NULL,'$category');
+            INSERT IGNORE INTO PRODUCTS(ID,ID_CATEGORY_TYPE,NAME,PRICE,WEIGHT,COMPONENTS) VALUES (NULL,(SELECT ID FROM CATEGORIES WHERE CATEGORY_TYPE='$category'),'$name','$price','$weight','$components')&quot;;
+            mysqli_multi_query($con,$query) or die(&quot;Couldn't Insert&quot;);
+            }
+
+            function cr_tables(){
+
+            $con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+            mysqli_set_charset($con, &quot;utf8&quot;);
+            echo 'Connected!';
+
+            $query = &quot;
+            CREATE TABLE CLIENTS
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                AGE INT(3),
+                GENDER INT(1) DEFAULT 0 NOT NULL,
+                COUNTRY VARCHAR(32) NOT NULL,
+                CITY VARCHAR(32) NOT NULL,
+                STREET VARCHAR(32)
+            );
+
+
+            CREATE TABLE EMPLOYEES
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                POSITION varchar(32) NOT NULL,
+                PERSONAL_INFO varchar(64) NOT NULL,
+                WORK_EXPERIENCE INT(2) NOT NULL
+            );
+
+            CREATE TABLE CONTRACTORS
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                TYPE_OF_RAW_MATERIAL varchar(32) NOT NULL,
+                PRICE_PER_KG INT(10) NOT NULL
+            );
+
+
+            CREATE TABLE CATEGORIES
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                CATEGORY_TYPE varchar(32) NOT NULL
+            );
+
+            CREATE TABLE PRODUCTS
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                ID_CATEGORY_TYPE INT(6) NOT NULL,
+                NAME varchar(15),
+                PRICE INT(10) NOT NULL,
+                WEIGHT INT(5) NOT NULL,
+                COMPONENTS varchar(64),
+                FOREIGN KEY (ID_CATEGORY_TYPE) REFERENCES CATEGORIES(ID)
+            );
+
+            CREATE TABLE PRODUCTIONS
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                ID_EMPLOYEE INT(6) NOT NULL,
+                ID_PRODUCT INT(6) NOT NULL,
+                COUNT INT(6) NOT NULL,
+                FOREIGN KEY (ID_EMPLOYEE) REFERENCES EMPLOYEES(ID),
+                FOREIGN KEY (ID_PRODUCT) REFERENCES PRODUCTS(ID)
+
+            );
+
+            CREATE TABLE PURCHASES
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                ID_CLIENT INT(6) NOT NULL,
+                ID_PRODUCT INT(6) NOT NULL,
+                ID_EMPLOYEE INT(6) NOT NULL,
+                WEIGHT INT(5) NOT NULL,
+                PRICE INT(10) NOT NULL,
+                FOREIGN KEY (ID_CLIENT) REFERENCES CLIENTS(ID),
+                FOREIGN KEY (ID_PRODUCT) REFERENCES PRODUCTS(ID),
+                FOREIGN KEY (ID_EMPLOYEE) REFERENCES EMPLOYEES(ID)
+            );
+
+            CREATE TABLE DELIVERY
+            (
+                ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                ID_CONTRACTOR INT(6) NOT NULL,
+                ID_EMPLOYEE INT(6) NOT NULL,
+                COUNT_PRODUCT INT(10) NOT NULL,
+                DATE_CREATION DATE,
+                FOREIGN KEY (ID_CONTRACTOR) REFERENCES CONTRACTORS(ID),
+                FOREIGN KEY (ID_EMPLOYEE) REFERENCES EMPLOYEES(ID)
+            );
+            &quot;;
+
+
+            if (mysqli_multi_query ($con, $query)) {
+                echo &quot;All Tables Created Successfully&quot;;
+            } else {
+                echo &quot;Error creating table: &quot; . mysqli_error($con);
+            }
+            }
+
+            if(!empty($_POST['select'])){
+            		if($_POST['select']==&quot;Обрати&quot;) select();
+                }
+
+            function select(){
+            	$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+            mysqli_set_charset($con, &quot;utf8&quot;);
+
+            $name=$_POST['itname'];
+
+            $query=&quot;SELECT
+            CATEGORIES.CATEGORY_TYPE AS 'Категорія',PRODUCTS.NAME as 'Назва', PRODUCTS.PRICE AS 'Ціна', PRODUCTS.WEIGHT AS 'Вага', PRODUCTS.COMPONENTS AS 'Компоненти' FROM CATEGORIES,PRODUCTS WHERE PRODUCTS.ID_CATEGORY_TYPE=CATEGORIES.ID AND PRODUCTS.NAME = '$name';
+            &quot;;
+            $result= mysqli_query($con,$query) or die(&quot;Couldn't Select&quot;);
+            if (mysqli_num_rows($result) &gt; 0) {
+            	$counter=1;
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo $counter.&quot;) Назва: &quot; . $row[&quot;Назва&quot;]. &quot;&lt;br&gt;Категорія: &quot; . $row[&quot;Категорія&quot;]. &quot;&lt;br&gt;Ціна: &quot; . $row[&quot;Ціна&quot;].&quot;&lt;br&gt;Вага: &quot;. $row[&quot;Вага&quot;].&quot;&lt;br&gt;Компоненти: &quot;. $row[&quot;Компоненти&quot;]. &quot;&lt;br&gt;&lt;br&gt;&quot;;
+                }
+            }
+            else{
+            	echo &quot;За вашим запитом товарів не знайдено&quot;;
+            }
+            }
+            ?&gt;
+
+            file(bd.php)
+
+
+            &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form name=&quot;bd&quot; method=&quot;POST&quot; action=&quot;bd.php&quot;&gt;
+	&lt;input type=&quot;submit&quot; name=&quot;create&quot; value=&quot;Створити таблиці&quot;&gt;&lt;br&gt;&lt;br&gt;
+	&lt;h5&gt;Додати клієнта&lt;/h5&gt;&lt;br&gt;
+  &lt;label&gt;Вік: &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Стать: &lt;input type=&quot;text&quot; name=&quot;gender&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Країна: &lt;input type=&quot;text&quot; name=&quot;country&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Місто: &lt;input type=&quot;text&quot; name=&quot;city&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Вулиця: &lt;input type=&quot;text&quot; name=&quot;street&quot;&gt;&lt;/label&gt;
+
+  &lt;br&gt;&lt;br&gt;
+	&lt;h5&gt;Додати співробітника&lt;/h5&gt;&lt;br&gt;
+  &lt;label&gt;Посада: &lt;input type=&quot;text&quot; name=&quot;position&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Персональна інформація: &lt;textarea name=&quot;info&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;
+  &lt;label&gt;Стаж роботи: &lt;input type=&quot;text&quot; name=&quot;experience&quot;&gt;&lt;/label&gt;
+
+  &lt;br&gt;&lt;br&gt;
+	&lt;h5&gt;Додати продукт&lt;/h5&gt;&lt;br&gt;
+  &lt;label&gt;Назва: &lt;input type=&quot;text&quot; name=&quot;prodname&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Ціна: &lt;input type=&quot;text&quot; name=&quot;price&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Вага: &lt;input type=&quot;text&quot; name=&quot;weight&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Категорія: &lt;input type=&quot;text&quot; name=&quot;category&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Компоненти: &lt;textarea name=&quot;components&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;
+
+  &lt;br&gt;&lt;br&gt;
+	&lt;h5&gt;Додати постачальника&lt;/h5&gt;&lt;br&gt;
+  &lt;label&gt;Ціна: &lt;input type=&quot;text&quot; name=&quot;mattype&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Вага: &lt;input type=&quot;text&quot; name=&quot;kgprice&quot;&gt;&lt;/label&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot; name=&quot;send&quot; value=&quot;Отправить&quot;&gt;&lt;br&gt;&lt;br&gt;
+  &lt;label&gt;Назва товару: &lt;input type=&quot;text&quot; name=&quot;itname&quot;&gt;&lt;/label&gt;
+  &lt;input type=&quot;submit&quot; name=&quot;select&quot; value=&quot;Обрати&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+file(insert.php)
+         </code></pre>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

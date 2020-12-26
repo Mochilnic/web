@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" type="text/css"/>
+  <head>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Effects - Effect demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    .spacer { height: 50px; width: 100% }
+    #button { padding: .5em 1em; text-decoration: none;}
+    #effect {  padding: 0.4em; position: relative; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+    .ui-effects-transfer { border: 2px dotted gray; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+
+      // Most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 50 };
+      } else if ( selectedEffect === "transfer" ) {
+        options = { to: "#button", className: "ui-effects-transfer" };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+
+      // Run the effect
+      $( "#effect" ).effect( selectedEffect, options, 500, callback );
+    };
+
+    // Callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+
+    // Set effect from select menu value
+    $( "#button" ).on( "click", function() {
+      runEffect();
+      return false;
+    });
+  } );
+  </script>
+    <title>Каталог</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Пекарня</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="about.html">Про нас</a>
+    <a class="p-2 text-dark" href="mainpage.php">Основна сторінка</a>
+    <a class="p-2 text-dark" href="catalog.php">Каталог</a>
+    <a class="p-2 text-dark" href="support.php">Служба підтримки</a>
+    <a class="p-2 text-dark" href="login.php">Особистий кабінет</a>
+  </nav>
+</div>
+<!-- <P name="info">Щодня випікаємо для вас авторський хліб ручної роботи та різноманітну, смачну випічку з натуральних та безпечних інгредієнтів.
+
+Для однаково високої якості нашого хліба ми використовуємо власні житню та пшеничну закваски, котрі створили ще у 2016 році. Щодня підкормлюємо і культивуємо культури молочно-кислих та термофільних бактерій, які є унікальним джерелом пробіотиків та корисної мікрофлори.
+
+Цінуємо смак та аромат вершкового масла, тому принципово не використовуємо маргарин чи інші замінники. Це ж стосується молока, сметани, яєць, та інших інгредієнтів. Готуємо тільки з якісної локальної сировини українського та бельгійського виробництва від перевірених постачальників.
+
+Щоранку випікаємо вершкові круасани з різноманітними фрутктовими і авторськими начинками. Листкове тісто виготовляємо самостійно, з використанням солодковершкового масла та технології холодного бродіння, тому наші круасани "живуть" всього 12 годин і є нашою гордістю.
+
+Дбайливе поводження з тістом, відмова від використання хімічних покращувачів, правильні продукти, технології та рецептури гарантують неперевершену якість і унікальний смак нашого хліба та випічки.
+
+Попри якість ми дбаємо про безпечність нашої продукції, та впроваджуємо на нашому виробництві систему менеджменту безпеки харчових продуктів (HACCP, ISO 22000).
+
+І ще, ми дуже любимо нашу роботу та те, що робимо для вас!</P> -->
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">Про нас</h3>
+    <p>
+     Щодня випікаємо для вас авторський хліб ручної роботи та різноманітну, смачну випічку з натуральних та безпечних інгредієнтів.
+
+Для однаково високої якості нашого хліба ми використовуємо власні житню та пшеничну закваски, котрі створили ще у 2016 році. Щодня підкормлюємо і культивуємо культури молочно-кислих та термофільних бактерій, які є унікальним джерелом пробіотиків та корисної мікрофлори.
+
+Цінуємо смак та аромат вершкового масла, тому принципово не використовуємо маргарин чи інші замінники. Це ж стосується молока, сметани, яєць, та інших інгредієнтів. Готуємо тільки з якісної локальної сировини українського та бельгійського виробництва від перевірених постачальників.
+
+Щоранку випікаємо вершкові круасани з різноманітними фрутктовими і авторськими начинками. Листкове тісто виготовляємо самостійно, з використанням солодковершкового масла та технології холодного бродіння, тому наші круасани "живуть" всього 12 годин і є нашою гордістю.
+
+Дбайливе поводження з тістом, відмова від використання хімічних покращувачів, правильні продукти, технології та рецептури гарантують неперевершену якість і унікальний смак нашого хліба та випічки.
+
+Попри якість ми дбаємо про безпечність нашої продукції, та впроваджуємо на нашому виробництві систему менеджменту безпеки харчових продуктів (HACCP, ISO 22000).
+
+І ще, ми дуже любимо нашу роботу та те, що робимо для вас!
+    </p>
+  </div>
+</div>
+
+<select name="effects" id="effectTypes">
+  <option value="blind">Blind</option>
+  <option value="bounce">Bounce</option>
+  <option value="clip">Clip</option>
+  <option value="drop">Drop</option>
+  <option value="explode">Explode</option>
+  <option value="fade">Fade</option>
+  <option value="fold">Fold</option>
+  <option value="highlight">Highlight</option>
+  <option value="puff">Puff</option>
+  <option value="pulsate">Pulsate</option>
+  <option value="scale">Scale</option>
+  <option value="shake">Shake</option>
+  <option value="size">Size</option>
+  <option value="slide">Slide</option>
+  <option value="transfer">Transfer</option>
+</select>
+
+<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+<div class="spacer"></div>
+<img src="https://www.ryazagro.ru/upload/iblock/cfb/pk_bt_2.jpg" class="floated-l">
+<img src="https://ubr.ua/img/article/38445/15_main.jpeg" class="floated-r">
+  </body>
+</html>

@@ -1,0 +1,18 @@
+.ukr{
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(to top, yellow 50%, blue 50%);
+}
+.ru{
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(white 30%, blue 50%, red 80%);
+}
+.polland{
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(white 50%, red 50%);
+}
+.location{
+  float: left;
+}

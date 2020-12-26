@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="../L5/lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="../L7/lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad6.html">Постановка задачі лабораторної роботи 6</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="serv.html">WAMP HTTP Server</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="config.html">Налаштування сервера</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="cod.html">Налаштування кодувань</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="dinamic.html">Динамічні елементи</a>
+      </li>
+        <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="form.html">Форма зворотнього зв’язку</a>
+      </li>
+      <li class="nav-item">
+      <a class="mt-1 btn btn-outline-secondary" href="conc.html">Висновок</a>
+    </li>
+  </ul><div class="mr-2 float-right" style="width: 65%; margin-top: -160px">
+        <div class="card">
+          <div class="card-body">
+            <h6>Налаштування сервера WAMP</h6>
+            <p>1) Переходимо до папки A:\wamp64\bin\apache\apache2.4.46\conf та відкриваємо файл httpd.conf</p>
+            <img src="img/conf1.jpg"><br>
+           <p>2)Знаходимо строки<br>
+            # Virtual hosts<br>
+#Include conf/extra/httpd-vhosts.conf<br>
+Та знімаємо знак коментаря з другої строки</p>
+<img src="img/conf2.jpg"><br>
+            <p>3) Переходимо до папки A:\wamp64\bin\apache\apache2.4.46\conf\extra та відкриваємо файл httpd-vhosts.conf</p>
+             <img src="img/conf3.jpg"><br>
+             <p>4) Додаємо наступні рядки:</p>
+             <img src="img/conf4.jpg"><br>
+             <p>5) Переходимо до папки C:\Windows\System32\drivers\etc та відкриваємо файл hosts</p>
+             <img src="img/conf5.jpg"><br>
+             <p>6) Додаємо наступні рядки:</p>
+             <img src="img/conf6.jpg"><br>
+             <p>7) Створюємо файл phpinfo.php для перевірки ресурсів нашого сайту</p>
+             <img src="img/conf7.jpg"><br>
+             <p>8) Переходимо за посиланням http://web/L6/phpinfo.php та перевіряємо</p>
+             <img src="img/conf8.jpg" width="800px"><br>
+             <p>9) Налаштовуємо посилання на наш каталог для сервера</p>
+             <img src="img/conf9.jpg">
+             <img src="img/conf10.jpg">
+             <img src="img/conf11.jpg">
+             <h5>Тепер ми впевнені що сайт налаштований правильно та наш веб-вузел працює коректно.</h5>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

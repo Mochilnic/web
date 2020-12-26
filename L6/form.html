@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="../L5/lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="../L7/lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad6.html">Постановка задачі лабораторної роботи 6</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="serv.html">WAMP HTTP Server</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="config.html">Налаштування сервера</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="cod.html">Налаштування кодувань</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="dinamic.html">Динамічні елементи</a>
+      </li>
+        <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="form.html">Форма зворотнього зв’язку</a>
+      </li>
+      <li class="nav-item">
+      <a class="mt-1 btn btn-outline-secondary" href="conc.html">Висновок</a>
+    </li>
+  </ul><div class="mr-2 float-right" style="width: 65%; margin-top: -160px">
+        <div class="card">
+          <div class="card-body">
+            <h6>Форма зворотнього зв'язку</h6>
+            <p>Правильне заповнення форми</p>
+            <img src="../L6/img/sup1.jpg">
+            <img src="../L6/img/sup2.jpg">
+             <p>Неравильне заповнення форми</p>
+            <img src="../L6/img/sup3.jpg">
+            <img src="../L6/img/sup4.jpg">
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; type=&quot;text/css&quot;/&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Support&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm&quot;&gt;
+  &lt;h5 class=&quot;my-0 mr-md-auto font-weight-normal&quot;&gt;Пекарня&lt;/h5&gt;
+  &lt;form autocomplete=&quot;off&quot; action=&quot;../action_page.php&quot;&gt;
+    &lt;div class=&quot;autocomplete&quot; style=&quot;width:300px;&quot;&gt;
+      &lt;input id=&quot;myInput&quot; type=&quot;text&quot; name=&quot;words&quot; placeholder=&quot;Введите текст&quot;&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;nav class=&quot;my-2 my-md-0 mr-md-3&quot;&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;about.html&quot;&gt;Про нас&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;mainpage.html&quot;&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;catalog.html&quot;&gt;Каталог&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;#&quot;&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;log.html&quot;&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;form name=&quot;feedback&quot; method=&quot;POST&quot; action=&quot;form.php&quot;&gt;
+  &lt;label&gt;Ваше ім'я: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Ваш email: &lt;input type=&quot;text&quot; name=&quot;email&quot;&gt;&lt;/label&gt;
+  &lt;label&gt;Текст звернення: &lt;textarea name=&quot;message&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;
+
+  &lt;input type=&quot;submit&quot; name=&quot;send&quot; value=&quot;Отправить&quot;&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+              "support.php"
+
+&lt;?php
+if (isset($_POST)) {
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $mess=$_POST['message'];
+    if (!empty($name) and !empty($email) and !empty($mess)) {
+    echo (&quot;Дякуємо за звернення, &quot;.$name.&quot;, ваше звернення передане до служби підтримки&lt;br&gt;&quot;);
+    echo date(&quot;Y-m-d H:i:s&quot;);
+}
+  else{
+    echo &quot;Не всі поля заповнені&quot;;
+  }
+}
+
+?&gt;
+
+
+          "form.php"
+           </code></pre>
+
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    
+<div class="mr-2 float-right" style="width: 100%;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Виконання 2 пункту</h5>
+          <img src="1.jpg" width="60%">
+          <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        #tasks, #add-task {
+            text-align: center;
+            margin: 40px auto 10px auto;
+            width: 40%;
+        }
+
+        table {
+            margin: 10px auto 0 auto;
+        }
+        body{
+            background-image: url(&quot;https://thumb.tildacdn.com/tild6231-6234-4365-b637-653932626636/-/resize/824x/-/format/webp/texture-1668079_1920.jpg&quot;);
+            background-size: 100%;
+        }
+    &lt;/style&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css&quot; integrity=&quot;sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2&quot; crossorigin=&quot;anonymous&quot;&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table id='tasks' class='table table-sm table-hover'&gt;&lt;/table&gt;
+    &lt;div id=&quot;add-task&quot;&gt;
+        &lt;input id=&quot;task-title&quot; class=&quot;form-control&quot; type=&quot;text&quot;  name=&quot;task-title&quot; placeholder=&quot;Назва&quot;&gt;
+        &lt;input id=&quot;task-text&quot; class=&quot;form-control&quot; type=&quot;text&quot;  name=&quot;task-text&quot; placeholder=&quot;Опис&quot;&gt;
+        &lt;div class=&quot;input-group mb-3&quot;&gt;
+            &lt;input id=&quot;task-datetime&quot; class=&quot;form-control&quot; type=&quot;datetime-local&quot;  name=&quot;task-datetime&quot; placeholder=&quot;DateTime&quot;&gt;
+            &lt;div class=&quot;input-group-append&quot;&gt;
+                &lt;button class=&quot;btn btn-outline-secondary&quot; type=&quot;button&quot; onclick=&quot;readXML(addTask);&quot;&gt;Додати&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        var alerts = [];
+
+        function readXML(func) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 &amp;&amp; this.status == 200) {
+                    func(this.responseXML);
+                } 
+            };
+            xmlhttp.open(&quot;GET&quot;, &quot;lab9.xml&quot;, true);
+            xmlhttp.send();
+
+        }
+
+        function showTasks(xmlDoc) {
+            var i;
+            var table = &quot;&lt;thead&gt;&lt;tr&gt;&lt;th scope='col'&gt;Назва&lt;/th&gt;&lt;th scope='col'&gt;Опис&lt;/th&gt;&lt;th scope='col'&gt;Дата&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&quot;;
+            deleteAllAlerts();
+            table += &quot;&lt;tbody&gt;&quot;;
+            var x = xmlDoc.getElementsByTagName(&quot;TASK&quot;);
+            for (i = 0; i &lt; x.length; i++) {
+                var title = x[i].getElementsByTagName(&quot;TITLE&quot;)[0].childNodes[0].nodeValue;
+                var text = x[i].getElementsByTagName(&quot;TEXT&quot;)[0].childNodes[0].nodeValue;
+                var date = x[i].getElementsByTagName(&quot;DATE&quot;)[0].childNodes[0].nodeValue;
+                table += &quot;&lt;tr&gt;&lt;td&gt;&quot; + title + &quot;&lt;/td&gt;&quot; +
+                    &quot;&lt;td&gt;&quot; + text + &quot;&lt;/td&gt;&quot; +
+                    &quot;&lt;td&gt;&quot; + date + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;;
+                    setAlert(date, title);
+            }
+            table += &quot;&lt;/tbody&gt;&quot;;
+            document.getElementById(&quot;tasks&quot;).innerHTML = table;
+            console.log(&quot;tasks showed&quot;);
+        }
+
+        function addTask(xmlDoc) {
+            var newTask = xmlDoc.createElement(&quot;TASK&quot;);
+            var newTitle = xmlDoc.createElement(&quot;TITLE&quot;)
+            newTitle.appendChild(xmlDoc.createTextNode(document.getElementById(&quot;task-title&quot;).value));
+            var newText = xmlDoc.createElement(&quot;TEXT&quot;);
+            newText.appendChild(xmlDoc.createTextNode(document.getElementById(&quot;task-text&quot;).value));
+            var newDate = xmlDoc.createElement(&quot;DATE&quot;);
+            newDate.appendChild(xmlDoc.createTextNode(document.getElementById(&quot;task-datetime&quot;).value));
+            newTask.appendChild(newTitle);
+            newTask.appendChild(newText);
+            newTask.appendChild(newDate);
+            xmlDoc.getElementsByTagName(&quot;TASKS&quot;)[0].appendChild(newTask);
+            console.log(xmlDoc);
+            var xhr = new XMLHttpRequest();
+            xhr.open(&quot;POST&quot;, &quot;writeXML.php&quot;, true);
+            xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;text/xml&quot;);
+            xhr.send(xmlDoc);
+            showTasks(xmlDoc);
+            console.log(&quot;send&quot;);
+        }
+
+
+        function setAlert(time, msg) {
+            var mseconds = new Date(time).getTime() - new Date().getTime();
+            if (mseconds &gt; 0) {
+                alerts.push(setTimeout(function() {
+                    alert(msg);
+                }, mseconds));
+                console.log(time + &quot;: &quot; + msg);
+            }
+        }
+        
+        function deleteAllAlerts() {
+            for (var i = 0; i &lt; alerts.length; i++) {
+                clearTimeout(alerts[i]);
+            }
+            alerts.length = 0;
+            console.log(&quot;all alerts deleted&quot;);
+        }
+
+        readXML(showTasks);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+file(ourtask.html)
+
+&lt;?php
+
+$xml = file_get_contents('php://input');
+$dom = new DOMDocument();
+$dom-&gt;preserveWhiteSpace = false;
+$dom-&gt;formatOutput = true;
+$dom-&gt;loadXML($xml);
+$file = fopen(&quot;C:\wamp64\www\Web\L9\lab9.xml&quot;, &quot;r+&quot;);
+fwrite($file, $dom-&gt;saveXML());
+fclose($file);
+
+?&gt;
+
+file(writeXML.php)
+
+
+         </code></pre>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

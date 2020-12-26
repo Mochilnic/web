@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="suk2.jpg">
+    <pre><code>
+            task2_9.html
+
+      &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;style&gt;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;
+}
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Проверка автозаполнения&lt;/h1&gt;
+&lt;form autocomplete="off" action="../action_page.php"&gt;
+  &lt;div class="autocomplete" style="width:300px;"&gt;
+    &lt;input id="myInput" type="text" name="words" placeholder="Введите текст"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function autocomplete(inp, arr) {
+  var currentFocus;
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      this.parentNode.appendChild(a);
+      for (i = 0; i &lt; arr.length; i++) {
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          b = document.createElement("DIV");
+          b.innerHTML = "&lt;strong&gt;" + arr[i].substr(0, val.length) + "&lt;/strong&gt;";
+          b.innerHTML += arr[i].substr(val.length);
+          b.innerHTML += "&lt;input type='hidden' value='" + arr[i] + "'&gt;";
+          b.addEventListener("click", function(e) {
+              inp.value = this.getElementsByTagName("input")[0].value;
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  function closeAllLists(elmnt) {
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i &lt; x.length; i++) {
+      if (elmnt != x[i] &amp;&amp; elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+var words = ["Apple","Google","KPI","Auto","Hello","Wow","Love","Привет","Страна","Телефон"];
+
+autocomplete(document.getElementById("myInput"), words);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+    </code></pre>
+  </body>
+  </html>

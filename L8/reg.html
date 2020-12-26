@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab8</title>
+  </head>
+  <body>
+    
+    
+        <div class="card-body">
+          <h5 class="card-title">Авторизація</h5>
+          <img src="imglab/8.jpg">
+          <img src="imglab/9.jpg">
+          <img src="imglab/10.jpg">
+          <img src="imglab/11.jpg">
+
+
+          <pre><code>
+            
+
+
+file(register.php)
+
+
+&lt;!DOCTYPE html&gt;
+&lt;?php
+session_start ();
+?&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;div class=&quot;d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm&quot;&gt;
+  &lt;h5 class=&quot;my-0 mr-md-auto font-weight-normal&quot;&gt;Пекарня&lt;/h5&gt;
+  &lt;nav class=&quot;my-2 my-md-0 mr-md-3&quot;&gt;
+   &lt;a class=&quot;p-2 text-dark&quot; href=&quot;about.html&quot;&gt;Про нас&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;mainpage.html&quot;&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;catalog.html&quot;&gt;Каталог&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;support.php&quot;&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;login.php&quot;&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;?php
+
+function generateCode($length=6) {
+    $chars = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHI JKLMNOPRQSTUVWXYZ0123456789&quot;;
+    $code = &quot;&quot;;
+    $clen = strlen($chars) - 1;
+    while (strlen($code) &lt; $length) {
+            $code .= $chars[mt_rand(0,$clen)];
+    }
+    return $code;
+}
+
+$link=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;testtable&quot;);
+
+
+// if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
+// {
+    
+//     header('Location: check.php');  
+// }
+if(isset($_POST['submit']))
+{
+
+    $query = mysqli_query($link,&quot;SELECT user_id, user_password FROM users WHERE user_login='&quot;.mysqli_real_escape_string($link,$_POST['login']).&quot;' LIMIT 1&quot;);
+    $data = mysqli_fetch_assoc($query);
+
+
+    if($data['user_password'] === md5(md5($_POST['password'])))
+    {
+
+        $hash = md5(generateCode(10));
+
+        if(!empty($_POST['not_attach_ip']))
+        {
+
+            $insip = &quot;, user_ip=INET_ATON('&quot;.$_SERVER['REMOTE_ADDR'].&quot;')&quot;;
+        }
+
+        
+        mysqli_query($link, &quot;UPDATE users SET user_hash='&quot;.$hash.&quot;' &quot;.$insip.&quot; WHERE user_id='&quot;.$data['user_id'].&quot;'&quot;);
+
+        setcookie(&quot;id&quot;, $data['user_id'], time()+60*60*24*30, &quot;/&quot;);
+        setcookie(&quot;hash&quot;, $hash, time()+60*60*24*30, &quot;/&quot;, null, null, true); 
+
+        header(&quot;Location: check.php&quot;); exit();
+    }
+    else
+    {
+        print &quot;Вы ввели неправильный логин/пароль&quot;;
+    }
+}
+
+function getlogin(){
+      if (isset($_SESSION['login']))
+{
+    return $_SESSION['login'];
+    
+}
+else{
+  return;
+}
+}
+
+function getpass(){
+      if (isset($_SESSION['password']))
+{
+    return $_SESSION['password'];
+    
+}
+else{
+  return;
+}
+}
+
+?&gt;
+&lt;form method=&quot;POST&quot;&gt;
+Логин &lt;input name=&quot;login&quot; type=&quot;text&quot; value=&quot;&lt;?php echo getlogin(); ?&gt;&quot; required&gt;&lt;br&gt;
+Пароль &lt;input name=&quot;password&quot; type=&quot;password&quot; value=&quot;&lt;?php echo getpass(); ?&gt;&quot; required&gt;&lt;br&gt;
+
+&lt;input name=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Войти&quot;&gt;
+&lt;/form&gt;
+
+      
+
+    &lt;div class=&quot;container signin&quot;&gt;
+      &lt;p&gt;Don't have an account? &lt;a href=&quot;register.php&quot;&gt;Sign up&lt;/a&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+
+file(login.php)
+
+
+&lt;?php
+session_start ();
+
+$link=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;testtable&quot;);
+
+if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
+{
+    $query = mysqli_query($link, &quot;SELECT *,INET_NTOA(user_ip) AS user_ip FROM users WHERE user_id = '&quot;.intval($_COOKIE['id']).&quot;' LIMIT 1&quot;);
+    $userdata = mysqli_fetch_assoc($query);
+
+    
+    print &quot;Привет, &quot;.$userdata['user_login'].&quot;. Всё работает!&quot;;
+
+    
+   $_SESSION [ 'login'] = $userdata['user_login'];
+
+   $_SESSION [ 'password'] = $userdata['password'];
+
+}
+else
+{
+    print &quot;Включите куки&quot;;
+}
+
+?&gt;
+&lt;a href=&quot;logout.php&quot;&gt;&lt;button&gt;Выйти&lt;/button&gt;&lt;/a&gt;
+
+file(check.php)
+
+
+&lt;?php
+session_start ();
+
+
+session_destroy();
+setcookie(&quot;id&quot;, &quot;&quot;, time() - 3600*24*30*12, &quot;/&quot;);
+setcookie(&quot;hash&quot;, &quot;&quot;, time() - 3600*24*30*12, &quot;/&quot;,null,null,true); 
+
+header(&quot;Location: login.php&quot;); exit;
+
+?&gt;
+
+file(logout.php)
+         </code></pre>
+  </div>
+</body>
+</html>

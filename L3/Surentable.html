@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title></title>
+ <style type="text/css">
+   table.page {
+    width: 100%;
+    border-spacing: 0px;
+   }
+   #top1{
+      height: 200px;
+      width: 200px;
+      background-color: blue;
+   }
+   #left2{
+      height: 200px;
+      width: 200px;
+      background-color: yellow;
+   }
+   #bottom3{
+      height: 200px;
+      width: 200px;
+      background-color: red;
+   }
+   #mid4{
+      height: 400px;
+      background-color: black;
+   }
+   #right{
+      height: 300px;
+      width: 200px;
+      background-color: orange;
+   }
+   td > table{
+      margin-left: 20px;
+
+   }
+  </style>
+</head>
+   <body>
+   <table class="page">
+
+      <tr>
+         <td rowspan = "3" id="left2"></td>
+         <td colspan = "2" id="top1"></td>
+         <td rowspan = "3" id="right"></td>
+            </tr>
+
+      <tr>
+         <td colspan = "1" id="mid4"></td>
+            </tr>
+
+      <tr>
+         <td colspan = "2" id="bottom3"></td>
+            </tr>
+
+   </table>
+</body>
+</html>

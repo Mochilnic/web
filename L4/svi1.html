@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="svi11.jpg">
+    <br>
+    <img src="svi12.jpg">
+    <pre><code>
+            web.html
+            jabascript.js
+
+      &lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;script type="text/javascript" src="jabascript.js"&gt;&lt;/script&gt;
+ &lt;title&gt;JS&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;Form name = "form1"&gt;
+Массив &lt;input type = "text" name = "arr" size = "10" id="first"&gt;
+&lt;input name = "button" type = "button" onClick = "showarr (arr)" value = "Обчислити"&gt;
+&lt;br&gt;
+&lt;!--&lt;input type = "date" name = "date"&gt;
+&lt;input type = "reset" name = "reset" size = "5"&gt;--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+function showarr(){
+  var value_1 = document.getElementById('first').value;
+  var arr=value_1.split(",");
+  document.write("Input:&lt;br&gt;");
+  for (i = 0; i &lt;arr.length; i ++)
+    document.write ("a [" + i + "] =" + arr [i] + "&lt;br&gt;");
+  
+  b=quickSort(arr);
+  document.write("Sorted:&lt;br&gt;");
+  for (i = 0; i &lt;b.length; i ++)
+    document.write ("b [" + i + "] =" + b [i] + "&lt;br&gt;");
+  
+  var min=b[0];
+  var max=b[b.length-1];
+  var sum=0;
+  for(i=0; i&lt;b.length;i++){
+    sum+=+arr[i];
+    if(arr[i]==max){
+      sum=0;
+      document.write("Here");
+    }
+    else if(arr[i]==min){
+      sum-=arr[i];
+      document.write("Сума між максимальним та мінімальним елементом= "+sum);
+      break;
+    }
+  }
+
+}
+function quickSort(arr) {
+  if (arr.length &lt; 2) return arr;
+  let pivot = arr[0];
+  const left = [];
+  const right = [];
+    
+  for (let i = 1; i &lt; arr.length; i++) {
+    if (pivot &gt; arr[i]) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+}
+
+
+
+    </code></pre>
+  </body>
+  </html>

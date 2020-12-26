@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <style>
+/*_Calendar*/
+#Calendar {
+    position: absolute;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border: 1px solid #303030;
+    display: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    z-index: 9999999;
+    box-shadow: 0 0 15px rgba(98, 98, 206, 1);
+}
+#Calendar_mns{
+    text-align:center;
+    margin: 0;
+    padding: 0;
+}
+#Calendar select,#Calendar option {
+    font-size: 11px;
+    padding: 0 2px
+}
+</style>
+   <script type="text/javascript" src="date.js"  async="async"></script>
+
+ <title>JS</title>
+</head>
+<body>
+	<form action="">
+<h3>Вибір дати:</h3>
+с <input type="text" value="dd-mm-yy" onfocus="this.select();_Calendar.lcs(this)"
+    onclick="event.cancelBubble=true;this.select();_Calendar.lcs(this)"  data-yearfrom="-80" data-yearto="5">
+по <input type="text" value="dd-mm-yy" onfocus="this.select();_Calendar.lcs(this)"
+    onclick="event.cancelBubble=true;this.select();_Calendar.lcs(this)" data-yearto="5">
+</p>
+
+</form>
+</body>
+</html>

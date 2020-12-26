@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="../L6/lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="../L7/lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad5.html">Постановка задачі лабораторної роботи 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="dinam.html">Динамічні елементи 3 пункту</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="#">Галерея UnitGallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="photo.html">Фотогалерея</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="slidephoto.html">Слайдер фотографій</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="slidevideo.html">Слайдер відео</a>
+      </li>
+            <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="buttons.html">Кнопки соц мереж</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="inform.html">Інформери</a>
+      </li>
+            <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="conc.html">Висновки</a>
+      </li>
+    </ul>
+</ul><div class="mr-2 float-right" style="width: 65%; margin-top: -360px">
+        <div class="card">
+          <div class="card-body">
+          <h5 class="card-title">Динамічні елементи 3 пункту</h5>
+          <img src="../L5/imgforlab/1.png">
+          <pre><code>
+            &lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js&quot;&gt; &lt;/script&gt;
+&lt;link rel = &quot;stylesheet&quot; href = &quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css&quot;&gt;
+&lt;script src = &quot;https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js&quot;&gt; &lt;/script&gt;
+&lt;script&gt;
+  $( function() {
+    $( &quot;#accordion&quot; ).accordion();
+  } );
+  $( function() {
+    $( &quot;#menu&quot; ).menu();
+  } );
+  $( function() {
+    var handle = $( &quot;#custom-handle&quot; );
+    $( &quot;#slider&quot; ).slider({
+      create: function() {
+        handle.text( $( this ).slider( &quot;value&quot; ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+  &lt;/script&gt;
+  &lt;style&gt;
+  .ui-menu { width: 150px; }
+  #custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Accordion --&gt;
+&lt;div id=&quot;accordion&quot;&gt;
+  &lt;h3&gt;Section 1&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Section 2&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Section 3&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    &lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;List item one&lt;/li&gt;
+      &lt;li&gt;List item two&lt;/li&gt;
+      &lt;li&gt;List item three&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Section 4&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;p&gt;
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    &lt;/p&gt;
+    &lt;p&gt;
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;!-- Menu --&gt;
+  &lt;ul id=&quot;menu&quot;&gt;
+  &lt;li class=&quot;ui-state-disabled&quot;&gt;&lt;div&gt;Toys (n/a)&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;Books&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;Clothing&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;Electronics&lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li class=&quot;ui-state-disabled&quot;&gt;&lt;div&gt;Home Entertainment&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div&gt;Car Hifi&lt;/div&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;div&gt;Utilities&lt;/div&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;Movies&lt;/div&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;div&gt;Music&lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;div&gt;Rock&lt;/div&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;div&gt;Alternative&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;div&gt;Classic&lt;/div&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;div&gt;Jazz&lt;/div&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;div&gt;Freejazz&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;div&gt;Big Band&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;div&gt;Modern&lt;/div&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;div&gt;Pop&lt;/div&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;ui-state-disabled&quot;&gt;&lt;div&gt;Specials (n/a)&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;!-- Slider --&gt;
+&lt;div id=&quot;slider&quot;&gt;
+  &lt;div id=&quot;custom-handle&quot; class=&quot;ui-slider-handle&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+3.html
+         </code></pre>
+        </div>
+      </div>
+  </body>
+</html>

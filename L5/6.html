@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  <head>
+   
+  </head>
+  <body>
+<!-- Погода -->
+<div id="MeteoInformerWrapOuther">
+<div id="MeteoInformerWrap">
+<script type="text/javascript" src="https://meteo.ua/var/informers.js"></script>
+<script type="text/javascript">
+makeMeteoInformer("https://meteo.ua/informer/get.php?cities=34&w=158&lang=ru&rnd=1&or=vert&clr=0&dt=today&style=modern",158,369);
+</script>
+</div>
+</div>
+
+<!-- Часы -->
+<script type="text/javascript" src="http://www.24webclock.com/clock24.js"></script>
+<table border="0" bgcolor="#3D700B" cellspacing=1 cellpadding=3 class="clock24st" style="line-height:14px; padding:0;">
+<tr><td bgcolor="#88ED23" class="clock24std" style="font-family:arial; font-size:12px;"><a href="http://www.24webclock.com/"><img src="http://www.24webclock.com/ico.gif" width="14" height="14" border="0" alt="html clock code" align="left" hspace="2"></a> <a href="http://www.24webclock.com/ru/" style="text-decoration:none;"><span class="clock24s" id="clock24_96816" style="color:#3D700B;">бесплатные часы для сайта</span></a></td></tr>
+</table>
+<script type="text/javascript">
+var clock24_96816 = new clock24('96816',120,'%W, %dd.%mm.%yyyy %hh:%nn','ru');
+clock24_96816.daylight('UA'); clock24_96816.refresh();
+</script>
+
+<!-- Валюты -->
+<iframe src="https://ru.widgets.investing.com/top-cryptocurrencies?theme=lightTheme&roundedCorners=true" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Предоставлено <a href="https://ru.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=TOP_CRYPTOCURRENCIES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
+  </body>
+  </html>

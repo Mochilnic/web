@@ -1,0 +1,51 @@
+.head{	/*клас */
+	text-align: center;
+	color: #402d3e;
+	margin-top: 50px;
+}
+.imager{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.floated-l{
+	float: left;
+	width: 200px;
+}
+.floated-r{
+	float: right;
+	width: 200px;
+}
+ul{		/*тег */
+	font-size: 20px;
+	color: #402d3e;
+}
+img#pikcha1{	/*ідентифікатор */
+	float: left;
+	width: 45%;
+	height: 300px;
+}
+img#pikcha2{	/*ідентифікатор */
+	float: right;
+	width: 45%;
+	height: 300px;
+}
+li>b{	/* дочірній */
+	color: maroon; 
+}
+b+i{	/*сусідній */
+	color: blue;
+}
+p[name]{ /*атрибута */
+	text-indent: 25px;
+	font-family: Palatino;
+	font-size: 18px;
+}
+*{ /*універсальний */
+	font-family: URW Chancery L;
+}
+h1,h2,h3,h3,h5{
+	font-weight: bold;
+}
+#breadpic{
+	width: 40%;
+}

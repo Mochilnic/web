@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="../L5/lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="../L7/lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad6.html">Постановка задачі лабораторної роботи 6</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="serv.html">WAMP HTTP Server</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="config.html">Налаштування сервера</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="cod.html">Налаштування кодувань</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="dinamic.html">Динамічні елементи</a>
+      </li>
+        <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="form.html">Форма зворотнього зв’язку</a>
+      </li>
+      <li class="nav-item">
+      <a class="mt-1 btn btn-outline-secondary" href="conc.html">Висновок</a>
+    </li>
+  </ul><div class="mr-2 float-right" style="width: 65%; margin-top: -160px">
+        <div class="card">
+          <div class="card-body">
+            <h6>Динамічні елементи</h6>
+            <img src="../L6/img/1.jpg">
+            <pre><code>
+              &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;head&gt;
+     &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Пекарня&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/resources/demos/style.css&quot;&gt;
+  &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  $( function() {
+    $( &quot;#tabs&quot; ).tabs();
+  } );
+  &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm&quot;&gt;
+  &lt;h5 class=&quot;my-0 mr-md-auto font-weight-normal&quot;&gt;Пекарня&lt;/h5&gt;
+  &lt;nav class=&quot;my-2 my-md-0 mr-md-3&quot;&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;about.html&quot;&gt;Про нас&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;mainpage.html&quot;&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;catalog.html&quot;&gt;Каталог&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;support.php&quot;&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;log.html&quot;&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;center&gt;
+&lt;div class=&quot;mt-3&quot;&gt;
+  &lt;img src=&quot;unnamed.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;div class=&quot;card-deck mb-3 text-center&quot;&gt;
+    &lt;div class=&quot;card mb-4 shadow-sm&quot;&gt;
+      &lt;div class=&quot;card-header&quot;&gt;
+        &lt;h4 class=&quot;my-0 font-weight-normal&quot;&gt;Печиво&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h1 class=&quot;card-title pricing-card-title&quot;&gt;50 грн &lt;small class=&quot;text-muted&quot;&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class=&quot;list-unstyled mt-3 mb-4&quot;&gt;
+          &lt;li&gt;Печиво&lt;/li&gt;
+          &lt;li&gt;Ціна за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-lg btn-block btn-primary&quot;&gt;Придбати&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card mb-4 shadow-sm&quot;&gt;
+      &lt;div class=&quot;card-header&quot;&gt;
+        &lt;h4 class=&quot;my-0 font-weight-normal&quot;&gt;Карамель&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h1 class=&quot;card-title pricing-card-title&quot;&gt;80 грн &lt;small class=&quot;text-muted&quot;&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class=&quot;list-unstyled mt-3 mb-4&quot;&gt;
+          &lt;li&gt;Карамель&lt;/li&gt;
+          &lt;li&gt;Ціна за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-lg btn-block btn-primary&quot;&gt;Придбати&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card mb-4 shadow-sm&quot;&gt;
+      &lt;div class=&quot;card-header&quot;&gt;
+        &lt;h4 class=&quot;my-0 font-weight-normal&quot;&gt;Торт&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;h1 class=&quot;card-title pricing-card-title&quot;&gt;200 грн &lt;small class=&quot;text-muted&quot;&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class=&quot;list-unstyled mt-3 mb-4&quot;&gt;
+          &lt;li&gt;Торт&lt;/li&gt;
+          &lt;li&gt;Ціна за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-lg btn-block btn-primary&quot;&gt;Придбати&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div id=&quot;tabs&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-1&quot;&gt;Печиво&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-2&quot;&gt;Карамель&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#tabs-3&quot;&gt;Торт&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;tabs-1&quot;&gt;
+    &lt;p&gt;Пе́чиво — переважно невеликий кондитерський виріб, випечений із тіста, зазвичай солодкий.
+
+До тіста печива часто додають різні спеції та горіхи, сухофрукти чи цукрові вироби. Часто печиво покривають шоколадом, або виготовляють начинку та розміщують її між двома печивами.
+
+В Україні печиво виготовляли ще здавна. Є багато старих рецептів приготування печива. Одним із найпоширеніших видів печива були медяники, що готувалися з меду та пшеничного чи житнього тіста.
+
+Багато рецептів потрапили до нас від сусідів, як-от, скажімо, мазурки.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-2&quot;&gt;
+    &lt;p&gt;Караме́ль — це десертний інгредієнт, що являє собою колоїдний розчин вареного цукру. Буває коричневого кольору різних відтінків. Використовується для ароматизації цукерок і напоїв, наприклад Кока-коли.
+
+Зазвичай застосовується як харчовий барвник і має класифікаційний номер E150.
+
+За однією з версій назва «карамель» походить від арабського вислову «курат-аль-миль» — «кулька солодкої солі». За іншою — від латинського «калламелус» — так у середньовічній Європі називали цукрову тростину[1].
+
+Виготовляється в процесі повільного нагрівання цукру до температури, близької до 170 °C.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;tabs-3&quot;&gt;
+    &lt;p&gt;Торт (італ. torta) — кондитерський виріб, зазвичай зі здобного тіста, з кремом, фруктами тощо. Торт звичайно складається з декількох коржів (з бісквітного, листкового або іншого тіста) із прошарками із крему. Зверху торт прикрашається візерунками із крему та фруктів.
+
+Торт може виступати як окремим кулінарним виробом зі своєю унікальною рецептурою[1], так і мати одночасне святкове призначення та оформлення з приводу урочистих подій.
+
+Зазвичай, торт є традиційною святковою стравою на весіллях та днях народження. На весілля торт прикрашають фігурками наречених, розташовуючи їх на верхівці торта. На день народження іменинний торт прикрашають свічками у кількості, що дорівнює віку іменинника, або спеціальними свічками з цифровим зображенням його віку, є також безліч варіантів оформлення тортів які ілюструють професійну діяльність особи яку вітають — торти в оформленні яких є логотипи організацій, написи кремом і т.д.
+
+Торти часто використовують як альтернативну зброю під час проведення яєчних атак для демонстрації громадської недовіри до знаних людей. Традицію кидати в відомих осіб тортами заснував бельгієць Ноель Годен — лідер руху «Міжнародні тістечкові бригади», від активістів якого постраждали такі особи, як Білл Гейтс, Мішель Камдессю, Жан-Люк Годар та інші.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+
+              "mainpage.html"
+           </code></pre>
+<img src="../L6/img/2.jpg">
+            <pre><code>
+              &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; type=&quot;text/css&quot;/&gt;
+  &lt;head&gt;
+     &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;jQuery UI Effects - Effect demo&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/resources/demos/style.css&quot;&gt;
+  &lt;style&gt;
+    .spacer { height: 50px; width: 100% }
+    #button { padding: .5em 1em; text-decoration: none;}
+    #effect {  padding: 0.4em; position: relative; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+    .ui-effects-transfer { border: 2px dotted gray; }
+  &lt;/style&gt;
+  &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  $( function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( &quot;#effectTypes&quot; ).val();
+
+      // Most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === &quot;scale&quot; ) {
+        options = { percent: 50 };
+      } else if ( selectedEffect === &quot;transfer&quot; ) {
+        options = { to: &quot;#button&quot;, className: &quot;ui-effects-transfer&quot; };
+      } else if ( selectedEffect === &quot;size&quot; ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+
+      // Run the effect
+      $( &quot;#effect&quot; ).effect( selectedEffect, options, 500, callback );
+    };
+
+    // Callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( &quot;#effect&quot; ).removeAttr( &quot;style&quot; ).hide().fadeIn();
+      }, 1000 );
+    };
+
+    // Set effect from select menu value
+    $( &quot;#button&quot; ).on( &quot;click&quot;, function() {
+      runEffect();
+      return false;
+    });
+  } );
+  &lt;/script&gt;
+    &lt;title&gt;Каталог&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm&quot;&gt;
+  &lt;h5 class=&quot;my-0 mr-md-auto font-weight-normal&quot;&gt;Пекарня&lt;/h5&gt;
+  &lt;nav class=&quot;my-2 my-md-0 mr-md-3&quot;&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;about.html&quot;&gt;Про нас&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;mainpage.html&quot;&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;catalog.html&quot;&gt;Каталог&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;support.php&quot;&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;log.html&quot;&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;!-- &lt;P name=&quot;info&quot;&gt;Щодня випікаємо для вас авторський хліб ручної роботи та різноманітну, смачну випічку з натуральних та безпечних інгредієнтів.
+
+Для однаково високої якості нашого хліба ми використовуємо власні житню та пшеничну закваски, котрі створили ще у 2016 році. Щодня підкормлюємо і культивуємо культури молочно-кислих та термофільних бактерій, які є унікальним джерелом пробіотиків та корисної мікрофлори.
+
+Цінуємо смак та аромат вершкового масла, тому принципово не використовуємо маргарин чи інші замінники. Це ж стосується молока, сметани, яєць, та інших інгредієнтів. Готуємо тільки з якісної локальної сировини українського та бельгійського виробництва від перевірених постачальників.
+
+Щоранку випікаємо вершкові круасани з різноманітними фрутктовими і авторськими начинками. Листкове тісто виготовляємо самостійно, з використанням солодковершкового масла та технології холодного бродіння, тому наші круасани &quot;живуть&quot; всього 12 годин і є нашою гордістю.
+
+Дбайливе поводження з тістом, відмова від використання хімічних покращувачів, правильні продукти, технології та рецептури гарантують неперевершену якість і унікальний смак нашого хліба та випічки.
+
+Попри якість ми дбаємо про безпечність нашої продукції, та впроваджуємо на нашому виробництві систему менеджменту безпеки харчових продуктів (HACCP, ISO 22000).
+
+І ще, ми дуже любимо нашу роботу та те, що робимо для вас!&lt;/P&gt; --&gt;
+&lt;div class=&quot;toggler&quot;&gt;
+  &lt;div id=&quot;effect&quot; class=&quot;ui-widget-content ui-corner-all&quot;&gt;
+    &lt;h3 class=&quot;ui-widget-header ui-corner-all&quot;&gt;Про нас&lt;/h3&gt;
+    &lt;p&gt;
+     Щодня випікаємо для вас авторський хліб ручної роботи та різноманітну, смачну випічку з натуральних та безпечних інгредієнтів.
+
+Для однаково високої якості нашого хліба ми використовуємо власні житню та пшеничну закваски, котрі створили ще у 2016 році. Щодня підкормлюємо і культивуємо культури молочно-кислих та термофільних бактерій, які є унікальним джерелом пробіотиків та корисної мікрофлори.
+
+Цінуємо смак та аромат вершкового масла, тому принципово не використовуємо маргарин чи інші замінники. Це ж стосується молока, сметани, яєць, та інших інгредієнтів. Готуємо тільки з якісної локальної сировини українського та бельгійського виробництва від перевірених постачальників.
+
+Щоранку випікаємо вершкові круасани з різноманітними фрутктовими і авторськими начинками. Листкове тісто виготовляємо самостійно, з використанням солодковершкового масла та технології холодного бродіння, тому наші круасани &quot;живуть&quot; всього 12 годин і є нашою гордістю.
+
+Дбайливе поводження з тістом, відмова від використання хімічних покращувачів, правильні продукти, технології та рецептури гарантують неперевершену якість і унікальний смак нашого хліба та випічки.
+
+Попри якість ми дбаємо про безпечність нашої продукції, та впроваджуємо на нашому виробництві систему менеджменту безпеки харчових продуктів (HACCP, ISO 22000).
+
+І ще, ми дуже любимо нашу роботу та те, що робимо для вас!
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;select name=&quot;effects&quot; id=&quot;effectTypes&quot;&gt;
+  &lt;option value=&quot;blind&quot;&gt;Blind&lt;/option&gt;
+  &lt;option value=&quot;bounce&quot;&gt;Bounce&lt;/option&gt;
+  &lt;option value=&quot;clip&quot;&gt;Clip&lt;/option&gt;
+  &lt;option value=&quot;drop&quot;&gt;Drop&lt;/option&gt;
+  &lt;option value=&quot;explode&quot;&gt;Explode&lt;/option&gt;
+  &lt;option value=&quot;fade&quot;&gt;Fade&lt;/option&gt;
+  &lt;option value=&quot;fold&quot;&gt;Fold&lt;/option&gt;
+  &lt;option value=&quot;highlight&quot;&gt;Highlight&lt;/option&gt;
+  &lt;option value=&quot;puff&quot;&gt;Puff&lt;/option&gt;
+  &lt;option value=&quot;pulsate&quot;&gt;Pulsate&lt;/option&gt;
+  &lt;option value=&quot;scale&quot;&gt;Scale&lt;/option&gt;
+  &lt;option value=&quot;shake&quot;&gt;Shake&lt;/option&gt;
+  &lt;option value=&quot;size&quot;&gt;Size&lt;/option&gt;
+  &lt;option value=&quot;slide&quot;&gt;Slide&lt;/option&gt;
+  &lt;option value=&quot;transfer&quot;&gt;Transfer&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;button id=&quot;button&quot; class=&quot;ui-state-default ui-corner-all&quot;&gt;Run Effect&lt;/button&gt;
+&lt;div class=&quot;spacer&quot;&gt;&lt;/div&gt;
+&lt;img src=&quot;https://www.ryazagro.ru/upload/iblock/cfb/pk_bt_2.jpg&quot; class=&quot;floated-l&quot;&gt;
+&lt;img src=&quot;https://ubr.ua/img/article/38445/15_main.jpeg&quot; class=&quot;floated-r&quot;&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+
+
+              "about.html"
+           </code></pre>
+<img src="../L6/img/3.jpg">
+            <pre><code>
+              &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; type=&quot;text/css&quot;/&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/resources/demos/style.css&quot;&gt;
+  &lt;style&gt;
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  &lt;/style&gt;
+  &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  $( function() {
+    $( &quot;#sortable&quot; ).sortable();
+    $( &quot;#sortable&quot; ).disableSelection();
+  } );
+  &lt;/script&gt;
+    &lt;title&gt;Каталог&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm&quot;&gt;
+  &lt;h5 class=&quot;my-0 mr-md-auto font-weight-normal&quot;&gt;Пекарня&lt;/h5&gt;
+  &lt;form autocomplete=&quot;off&quot; action=&quot;../action_page.php&quot;&gt;
+    &lt;div class=&quot;autocomplete&quot; style=&quot;width:300px;&quot;&gt;
+      &lt;input id=&quot;myInput&quot; type=&quot;text&quot; name=&quot;words&quot; placeholder=&quot;Введите текст&quot;&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;nav class=&quot;my-2 my-md-0 mr-md-3&quot;&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;about.html&quot;&gt;Про нас&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;mainpage.html&quot;&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;catalog.html&quot;&gt;Каталог&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;support.php&quot;&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class=&quot;p-2 text-dark&quot; href=&quot;log.html&quot;&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;script&gt;
+function autocomplete(inp, arr) {
+  var currentFocus;
+  inp.addEventListener(&quot;input&quot;, function(e) {
+      var a, b, i, val = this.value;
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      a = document.createElement(&quot;DIV&quot;);
+      a.setAttribute(&quot;id&quot;, this.id + &quot;autocomplete-list&quot;);
+      a.setAttribute(&quot;class&quot;, &quot;autocomplete-items&quot;);
+      this.parentNode.appendChild(a);
+      for (i = 0; i &lt; arr.length; i++) {
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          b = document.createElement(&quot;DIV&quot;);
+          b.innerHTML = &quot;&lt;strong&gt;&quot; + arr[i].substr(0, val.length) + &quot;&lt;/strong&gt;&quot;;
+          b.innerHTML += arr[i].substr(val.length);
+          b.innerHTML += &quot;&lt;input type='hidden' value='&quot; + arr[i] + &quot;'&gt;&quot;;
+          b.addEventListener(&quot;click&quot;, function(e) {
+              inp.value = this.getElementsByTagName(&quot;input&quot;)[0].value;
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  function closeAllLists(elmnt) {
+    var x = document.getElementsByClassName(&quot;autocomplete-items&quot;);
+    for (var i = 0; i &lt; x.length; i++) {
+      if (elmnt != x[i] &amp;&amp; elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  document.addEventListener(&quot;click&quot;, function (e) {
+      closeAllLists(e.target);
+  });
+}
+var words = [&quot;Здібні булки&quot;,&quot;Круасани&quot;,&quot;Слойки&quot;,&quot;Тістечка&quot;,&quot;Торти&quot;,&quot;Печиво&quot;,&quot;Хліб&quot;];
+
+autocomplete(document.getElementById(&quot;myInput&quot;), words);
+&lt;/script&gt;
+&lt;h1 class=&quot;head&quot;&gt;Список продукції&lt;/h1&gt;
+&lt;ul id=&quot;sortable&quot;&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Здобні булки&lt;/li&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Круасани&lt;/li&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Слойки&lt;/li&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Тістечка&lt;/li&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Торти&lt;/li&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Печиво&lt;/li&gt;
+  &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;&lt;b&gt;Хліб&lt;/b&gt;&lt;i&gt;(звичайний та бездріжжджовий)&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class=&quot;imager&quot;&gt;
+&lt;img src=&quot;https://бизнесидея.рф/wp-content/uploads/2018/01/biznes-plan-dlya-mini-pekarni.jpg&quot; id=&quot;breadpic&quot;&gt;
+&lt;img src=&quot;https://moybiznes.org/wp-content/uploads/bulochnaya-678x381.jpg&quot; id=&quot;pikcha2&quot;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+
+
+              "catalog.html"
+           </code></pre>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

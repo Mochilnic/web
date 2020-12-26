@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="mr-2 float-right" style="width: 100%;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">AJAX-запити у власному сайті</h5>
+          <img src="2.jpg">
+          <img src="3.jpg">
+          <img src="4.jpg">
+          <img src="5.jpg">
+          <pre><code>
+&lt;?php
+session_start();
+$cookie_name = &quot;language&quot;;
+$cookie_value = &quot;lang&quot;;
+setcookie($cookie_name, $cookie_value, time() + 15778463);
+ ?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;head&gt;
+     &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Пекарня&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/resources/demos/style.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;icons.css&quot;&gt;
+  &lt;script src=&quot;https://code.jquery.com/jquery-1.12.4.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  $( function() {
+    $( &quot;#tabs&quot; ).tabs();
+  } );
+  &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+    if (isset($_GET['lang'])) {
+      if($lang = $_GET['lang']){
+      echo &quot;Обрана мова: &quot; . $_GET['lang'];
+    }
+    }
+     ?&gt;&lt;div id=&quot;welcome&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm&quot;&gt;
+  &lt;h5 class=&quot;my-0 mr-md-auto font-weight-normal&quot;&gt;Пекарня&lt;/h5&gt;
+  &lt;form method=&quot;GET&quot;&gt;
+  &lt;div class=&quot;location&quot;&gt;
+  &lt;button class=&quot;ukr&quot; name=&quot;lang&quot; type=&quot;submit&quot; value=&quot;Ukraine&quot;&gt;UA&lt;/button&gt;&lt;?php setcookie(&quot;ukr&quot;) ?&gt;
+  &lt;button class=&quot;ru&quot; name=&quot;lang&quot; type=&quot;submit&quot; value=&quot;Russia&quot;&gt;RU&lt;/button&gt;&lt;?php setcookie(&quot;ru&quot;) ?&gt;
+  &lt;button class=&quot;polland&quot; name=&quot;lang&quot; type=&quot;submit&quot; value=&quot;Poland&quot;&gt;PL&lt;/button&gt;&lt;?php setcookie(&quot;pl&quot;) ?&gt;
+  &lt;/div&gt;
+ &lt;/form&gt;
+  &lt;?php
+  if (isset($_GET['lang'])) {
+    if($_GET['lang']==&quot;Russia&quot;){
+      print(&quot;&lt;nav class='my-2 my-md-0 mr-md-3'&gt;
+    &lt;a class='p-2 text-dark' href='about.html'&gt;Про нас&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='mainpage.php'&gt;Основная страница&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='catalog.php'&gt;Каталог&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='support.php'&gt;Служба поддержки&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='login.php'&gt;Личный кабинет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;center&gt;
+&lt;div class='mt-3'&gt;
+  &lt;img src='unnamed.jpg' alt=''&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;div class='card-deck mb-3 text-center'&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Печенье&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;50 грн &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Печенье&lt;/li&gt;
+          &lt;li&gt;Цена за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Купить&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Карамель&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;80 грн &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Карамель&lt;/li&gt;
+          &lt;li&gt;Цена за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Купить&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Торт&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;200 грн &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Торт&lt;/li&gt;
+          &lt;li&gt;Цена за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Купить&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div id='tabs'&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href='#tabs-1'&gt;Печенье&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tabs-2'&gt;Карамель&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tabs-3'&gt;Торт&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id='tabs-1'&gt;
+    &lt;p&gt;Печенье - преимущественно небольшой кондитерское изделие, выпеченный из теста, обычно сладкий.
+
+В тесто печенья часто добавляют различные специи и орехи, сухофрукты или сахарные изделия. Часто печенье покрывают шоколадом, или изготавливают начинку и размещают ее между двумя печеньями.
+
+В Украине печенье изготовляли еще давно. Есть много старых рецептов приготовления печенья. Одним из самых распространенных видов печенья были пряники, которые готовились из меда и пшеничной или ржаной теста.
+
+Многие рецепты попали к нам от соседей, например, скажем, мазурки.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tabs-2'&gt;
+    &lt;p&gt;Карамель - это десертный ингредиент, представляет собой коллоидный раствор вареного сахара. Бывает коричневого цвета различных оттенков. Используется для ароматизации конфет и напитков, например Кока-колы.
+
+Обычно применяется как пищевой краситель и имеет классификационный номер E150.
+
+По одной из версий название «карамель» происходит от арабского выражения «Курата-аль-миль» - «шарик сладкой соли». По другой - от латинского «калламелус» - так в средневековой Европе называли сахарный тростник [1].
+
+Изготавливается в процессе медленного нагрева сахара до температуры, близкой к 170 ° C.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tabs-3'&gt;
+    &lt;p&gt;Торт (итал. Torta) - кондитерское изделие, обычно из сдобного теста, с кремом, фруктами и тому подобное. Торт обычно состоит из нескольких коржей (из бисквитного, слоеного или иного теста) с прослойками из крема. Сверху торт украшается узорами из крема и фруктов.
+
+Торт может выступать как отдельным кулинарным изделием со своей уникальной рецептуре [1], так и иметь одновременно праздничное назначения и оформления по поводу торжественных событий.
+
+Обычно, торт является традиционной праздничным блюдом на свадьбах и днях рождения. На свадьбу торт украшают фигурками молодоженов, располагая их на верхушке торта. На день рождения именинный торт украшают свечами в количестве, равном возраста именинника, или специальными свечами с цифровым изображением возраста, есть также множество вариантов оформления тортов иллюстрирующие профессиональной деятельности лица которую приветствуют - торты в оформлении которых логотипы организаций, надписи кремом и т .д.
+
+Торты часто используют как альтернативную оружие во время проведения яичных атак для демонстрации общественной недоверия к известных людей. Традицию бросать в известных лиц тортами основал бельгиец Ноэль Годен - лидер движения «Международные пирожные бригады», от активистов которого пострадали такие лица, как Билл Гейтс, Мишель Камдессю, Жан-Люк Годар и другие.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&quot;);
+    }
+    else if ($_GET['lang']==&quot;Poland&quot;){
+      print(&quot;&lt;nav class='my-2 my-md-0 mr-md-3'&gt;
+    &lt;a class='p-2 text-dark' href='about.html'&gt;O nas&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='mainpage.php'&gt;Strona główna&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='catalog.php'&gt;Katalog&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='support.php'&gt;Usługa wsparcia&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='login.php'&gt;Obszar osobisty&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;center&gt;
+&lt;div class='mt-3'&gt;
+  &lt;img src='unnamed.jpg' alt=''&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;div class='card-deck mb-3 text-center'&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Biszkopty&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;50 UAH &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Biszkopty&lt;/li&gt;
+          &lt;li&gt;Cena za 1 kg&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Kup&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Karmel&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;80 UAH &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Karmel&lt;/li&gt;
+          &lt;li&gt;Cena za 1 kg&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Kup&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Ciasto&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;200 UAH &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Ciasto&lt;/li&gt;
+          &lt;li&gt;Cena za 1 kg&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Kup&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div id='tabs'&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href='#tabs-1'&gt;Biszkopty&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tabs-2'&gt;Karmel&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tabs-3'&gt;Ciasto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id='tabs-1'&gt;
+    &lt;p&gt;Ciasteczka to przeważnie małe wypieki wypiekane z ciasta, zazwyczaj słodkie.
+
+Do ciasta na ciasteczka często dodaje się różne przyprawy i orzechy, suszone owoce lub produkty cukrowe. Często ciasteczka są oblane czekoladą lub nadzienie jest robione i umieszczane między dwoma ciasteczkami.
+
+Na Ukrainie ciasteczka były robione przez długi czas. Istnieje wiele starych przepisów na ciasteczka. Jednym z najpopularniejszych rodzajów ciastek był piernik, który był robiony z miodu i ciasta pszennego lub żytniego.
+
+Wiele przepisów przyszło do nas od sąsiadów, na przykład mazurki.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tabs-2'&gt;
+    &lt;p&gt;Karmel to składnik deseru, koloidalny roztwór gotowanego cukru. Występuje w różnych odcieniach brązu. Służy do aromatyzowania cukierków i napojów, takich jak Coca-Cola.
+
+Jest powszechnie stosowany jako barwnik spożywczy i ma numer klasyfikacyjny E150.
+
+Według jednej wersji nazwa „karmel” pochodzi od arabskiego wyrażenia „Kurata-al-mi” - „kulka słodkiej soli”. Według drugiego - od łacińskiego „callamelus” - tak nazywano trzcinę cukrową w średniowiecznej Europie [1].
+
+Powstaje poprzez powolne podgrzewanie cukru do temperatury zbliżonej do 170 ° C.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tabs-3'&gt;
+    &lt;p&gt;Ciasto (w języku włoskim. Torta) - wirib cukierniczy, przywołaj smaczne ciasto, ze śmietaną, też owocami. Ciasto jest dogodnie składowane z ciastek z kalkomanią (z płaskich, liściastych lub nawet ciastek) oraz z ciast i śmietanki. Na wierzch ciasta udekoruj winogronami ze śmietany i owocami.
+
+Ciasto można ozdobić kulinarnym virobem według naszego własnego, unikalnego przepisu [1], więc tak szybko, jak otrzyma Svyatkove, jest ono przeznaczone do napędzania marnotrawstwa podium.
+
+Zvychay, ciasto jest tradycyjną tradycją svyatkova na zabawę tamtych dni ludzi. Na torcie udekoruj ciasto figurkami imion, rostashovuyuchi na wierzchu ciasta. W Dzień Ludu udekoruj tort urodzinowy świeczkami na przyjęciu urodzinowym, tortem urodzinowym na przyjęcie urodzinowe lub specjalnymi świeczkami z cyfrowymi obrazami przyjęcia urodzinowego, a także prostymi opcjami dekoracji tortu na przyjęcie urodzinowe. .re.
+
+Ciasta są często zwycięską alternatywą dla godzinnych ataków na jachty, aby pokazać ogromną nieufność doświadczonych ludzi. Belg Noel Gaudin, przywódca Międzynarodowej Brygady Tistechkowa, jest liderem Międzynarodowej Brygady Tistechkowa, ponieważ działacze, którzy ucierpieli z takich osób jak Bill Gates, Michel Camdessus i Jean-Luc&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&quot;);
+    }
+    else{
+      print (&quot;&lt;nav class='my-2 my-md-0 mr-md-3'&gt;
+    &lt;a class='p-2 text-dark' href='about.html'&gt;Про нас&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='mainpage.php'&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='catalog.php'&gt;Каталог&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='support.php'&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class='p-2 text-dark' href='login.php'&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;center&gt;
+&lt;div class='mt-3'&gt;
+  &lt;img src='unnamed.jpg' alt=''&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;div class='card-deck mb-3 text-center'&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Печиво&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;50 грн &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Печиво&lt;/li&gt;
+          &lt;li&gt;Ціна за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Придбати&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Карамель&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;80 грн &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Карамель&lt;/li&gt;
+          &lt;li&gt;Ціна за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Придбати&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class='card mb-4 shadow-sm'&gt;
+      &lt;div class='card-header'&gt;
+        &lt;h4 class='my-0 font-weight-normal'&gt;Торт&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class='card-body'&gt;
+        &lt;h1 class='card-title pricing-card-title'&gt;200 грн &lt;small class='text-muted'&gt;&lt;/small&gt;&lt;/h1&gt;
+        &lt;ul class='list-unstyled mt-3 mb-4'&gt;
+          &lt;li&gt;Торт&lt;/li&gt;
+          &lt;li&gt;Ціна за 1 кг&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button type='button' class='btn btn-lg btn-block btn-primary'&gt;Придбати&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div id='tabs'&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href='#tabs-1'&gt;Печиво&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tabs-2'&gt;Карамель&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tabs-3'&gt;Торт&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id='tabs-1'&gt;
+    &lt;p&gt;Пе́чиво — переважно невеликий кондитерський виріб, випечений із тіста, зазвичай солодкий.
+
+До тіста печива часто додають різні спеції та горіхи, сухофрукти чи цукрові вироби. Часто печиво покривають шоколадом, або виготовляють начинку та розміщують її між двома печивами.
+
+В Україні печиво виготовляли ще здавна. Є багато старих рецептів приготування печива. Одним із найпоширеніших видів печива були медяники, що готувалися з меду та пшеничного чи житнього тіста.
+
+Багато рецептів потрапили до нас від сусідів, як-от, скажімо, мазурки.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tabs-2'&gt;
+    &lt;p&gt;Караме́ль — це десертний інгредієнт, що являє собою колоїдний розчин вареного цукру. Буває коричневого кольору різних відтінків. Використовується для ароматизації цукерок і напоїв, наприклад Кока-коли.
+
+Зазвичай застосовується як харчовий барвник і має класифікаційний номер E150.
+
+За однією з версій назва «карамель» походить від арабського вислову «курат-аль-миль» — «кулька солодкої солі». За іншою — від латинського «калламелус» — так у середньовічній Європі називали цукрову тростину[1].
+
+Виготовляється в процесі повільного нагрівання цукру до температури, близької до 170 °C.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tabs-3'&gt;
+    &lt;p&gt;Торт (італ. torta) — кондитерський виріб, зазвичай зі здобного тіста, з кремом, фруктами тощо. Торт звичайно складається з декількох коржів (з бісквітного, листкового або іншого тіста) із прошарками із крему. Зверху торт прикрашається візерунками із крему та фруктів.
+
+Торт може виступати як окремим кулінарним виробом зі своєю унікальною рецептурою[1], так і мати одночасне святкове призначення та оформлення з приводу урочистих подій.
+
+Зазвичай, торт є традиційною святковою стравою на весіллях та днях народження. На весілля торт прикрашають фігурками наречених, розташовуючи їх на верхівці торта. На день народження іменинний торт прикрашають свічками у кількості, що дорівнює віку іменинника, або спеціальними свічками з цифровим зображенням його віку, є також безліч варіантів оформлення тортів які ілюструють професійну діяльність особи яку вітають — торти в оформленні яких є логотипи організацій, написи кремом і т.д.
+
+Торти часто використовують як альтернативну зброю під час проведення яєчних атак для демонстрації громадської недовіри до знаних людей. Традицію кидати в відомих осіб тортами заснував бельгієць Ноель Годен — лідер руху «Міжнародні тістечкові бригади», від активістів якого постраждали такі особи, як Білл Гейтс, Мішель Камдессю, Жан-Люк Годар та інші.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&quot;);
+    }
+    }
+    else{
+      header('Location: mainpage.php?lang=Ukraine');
+    }
+
+  ?&gt;
+  &lt;div id=&quot;cook&quot;&gt;&lt;/div&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    var request = new XMLHttpRequest();
+request.open('GET','processing.php',true);
+request.addEventListener('readystatechange', function() {
+  if ((request.readyState==4) &amp;&amp; (request.status==200)) {
+    console.log(request);
+    console.log(request.responseText);
+    var welcome = document.getElementById('welcome');
+    welcome.innerHTML = request.responseText;
+  }
+}); 
+request.send();
+
+var request2 = new XMLHttpRequest();
+request2.open('GET','maincont.php',true);
+request2.addEventListener('readystatechange', function() {
+  if ((request2.readyState==4) &amp;&amp; (request2.status==200)) {
+    console.log(request2);
+    console.log(request2.responseText);
+    var cook = document.getElementById('cook');
+    cook.innerHTML = request2.responseText;
+  }
+}); 
+request2.send();
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+
+file(mainpage.php)
+
+
+
+&lt;?php
+session_start();
+
+if (isset($_SESSION['login'])){
+    $output= &quot;Здравствуйте, &quot;.$_SESSION['login'];
+}
+else{
+$output = 'Здравствуйте, пользователь! ';
+}
+
+echo $output;
+
+?&gt;
+
+file(processing.php)
+
+
+ &lt;?php
+ if (isset($_COOKIE['language'])){
+  print_r($_COOKIE);
+ }
+  ?&gt;
+
+file(maincont.php)
+
+
+&lt;?php
+$con=mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;,&quot;webbd&quot;) or die(&quot;Couldn't Connect&quot;) ;
+mysqli_set_charset($con, &quot;utf8&quot;);
+
+$name=$_POST['itname'];
+
+$query=&quot;SELECT
+CATEGORIES.CATEGORY_TYPE AS 'Категорія',PRODUCTS.NAME as 'Назва', PRODUCTS.PRICE AS 'Ціна', PRODUCTS.WEIGHT AS 'Вага', PRODUCTS.COMPONENTS AS 'Компоненти' FROM CATEGORIES,PRODUCTS WHERE PRODUCTS.ID_CATEGORY_TYPE=CATEGORIES.ID AND PRODUCTS.NAME = '$name';
+&quot;;
+$result= mysqli_query($con,$query) or die(&quot;Couldn't Select&quot;);
+if (mysqli_num_rows($result) &gt; 0) {
+  $counter=1;
+    while($row = mysqli_fetch_assoc($result)) {
+        echo $counter.&quot;) Назва: &quot; . $row[&quot;Назва&quot;]. &quot;&lt;br&gt;Категорія: &quot; . $row[&quot;Категорія&quot;]. &quot;&lt;br&gt;Ціна: &quot; . $row[&quot;Ціна&quot;].&quot;&lt;br&gt;Вага: &quot;. $row[&quot;Вага&quot;].&quot;&lt;br&gt;Компоненти: &quot;. $row[&quot;Компоненти&quot;]. &quot;&lt;br&gt;&lt;br&gt;&quot;;
+        $fd = fopen(&quot;logs.txt&quot;, 'a') or die(&quot;не удалось создать файл&quot;);
+        $str = &quot;\nНазва: &quot; . $row[&quot;Назва&quot;]. &quot;\nКатегорія: &quot; . $row[&quot;Категорія&quot;]. &quot;\nЦіна: &quot; . $row[&quot;Ціна&quot;].&quot;\nВага: &quot;. $row[&quot;Вага&quot;].&quot;\nКомпоненти: &quot;. $row[&quot;Компоненти&quot;]. &quot;&quot;;
+        fwrite($fd, $str);
+    }
+}
+else{
+  echo &quot;За вашим запитом товарів не знайдено&quot;;
+}
+?&gt;
+
+file(1.php)
+         </code></pre>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

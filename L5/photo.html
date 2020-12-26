@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="../L6/lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="../L7/lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad5.html">Постановка задачі лабораторної роботи 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="dinam.html">Динамічні елементи 3 пункту </a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="#">Галерея UnitGallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="photo.html">Фотогалерея</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="slidephoto.html">Слайдер фотографій</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="slidevideo.html">Слайдер відео</a>
+      </li>
+            <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="buttons.html">Кнопки соц мереж</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="inform.html">Інформери</a>
+      </li>
+            <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="conc.html">Висновки</a>
+      </li>
+    </ul><div class="mr-2 float-right" style="width: 65%; margin-top: -360px">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Фотогалерея</h5>
+            <img src="../L5/imgforlab/2.png">
+            <pre><code>
+              &lt;!DOCTYPE html&gt;
+
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+&lt;title&gt;Unite Gallery - Tiles - Justified&lt;/title&gt;
+
+  &lt;script type='text/javascript' src='unitegallery/js/jquery-11.0.min.js'&gt;&lt;/script&gt;
+  &lt;script type='text/javascript' src='unitegallery/js/unitegallery.min.js'&gt;&lt;/script&gt;
+
+  &lt;link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' /&gt;
+
+  &lt;script type='text/javascript' src='unitegallery/themes/tiles/ug-theme-tiles.js'&gt;&lt;/script&gt;
+
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;h2&gt;Tiles - Justified&lt;/h2&gt;
+
+  &lt;div id=&quot;gallery&quot; style=&quot;display:none;&quot;&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Lemon Slice&quot;
+         src=&quot;images/thumbs/tile1.jpg&quot;
+         data-image=&quot;images/big/tile1.jpg&quot;
+         data-description=&quot;This is a Lemon Slice&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Peppers&quot;
+         src=&quot;images/thumbs/tile2.jpg&quot;
+         data-image=&quot;images/big/tile2.jpg&quot;
+         data-description=&quot;Those are peppers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Keys&quot;
+         src=&quot;images/thumbs/tile3.jpg&quot;
+         data-image=&quot;images/big/tile3.jpg&quot;
+         data-description=&quot;Those are keys&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Friuts in cup&quot;
+         src=&quot;images/thumbs/tile4.jpg&quot;
+         data-image=&quot;images/big/tile4.jpg&quot;
+         data-description=&quot;Those are friuts in a cup&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Yellow Flowers&quot;
+         src=&quot;images/thumbs/tile5.jpg&quot;
+         data-image=&quot;images/big/tile5.jpg&quot;
+         data-description=&quot;Those are yellow flowers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Butterfly&quot;
+         src=&quot;images/thumbs/tile6.jpg&quot;
+         data-image=&quot;images/big/tile6.jpg&quot;
+         data-description=&quot;This is butterfly&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Boat&quot;
+         src=&quot;images/thumbs/tile7.jpg&quot;
+         data-image=&quot;images/big/tile7.jpg&quot;
+         data-description=&quot;This is a boat&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Woman&quot;
+         src=&quot;images/thumbs/tile8.jpg&quot;
+         data-image=&quot;images/big/tile8.jpg&quot;
+         data-description=&quot;This is a woman&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Cup Of Coffee&quot;
+         src=&quot;images/thumbs/tile9.jpg&quot;
+         data-image=&quot;images/big/tile9.jpg&quot;
+         data-description=&quot;This is cup of coffee&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Iphone Back&quot;
+         src=&quot;images/thumbs/tile10.jpg&quot;
+         data-image=&quot;images/big/tile10.jpg&quot;
+         data-description=&quot;This is iphone back&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Lemon Slice&quot;
+         src=&quot;images/thumbs/tile1.jpg&quot;
+         data-image=&quot;images/big/tile1.jpg&quot;
+         data-description=&quot;This is a Lemon Slice&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Peppers&quot;
+         src=&quot;images/thumbs/tile2.jpg&quot;
+         data-image=&quot;images/big/tile2.jpg&quot;
+         data-description=&quot;Those are peppers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Keys&quot;
+         src=&quot;images/thumbs/tile3.jpg&quot;
+         data-image=&quot;images/big/tile3.jpg&quot;
+         data-description=&quot;Those are keys&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Friuts in cup&quot;
+         src=&quot;images/thumbs/tile4.jpg&quot;
+         data-image=&quot;images/big/tile4.jpg&quot;
+         data-description=&quot;Those are friuts in a cup&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Yellow Flowers&quot;
+         src=&quot;images/thumbs/tile5.jpg&quot;
+         data-image=&quot;images/big/tile5.jpg&quot;
+         data-description=&quot;Those are yellow flowers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Butterfly&quot;
+         src=&quot;images/thumbs/tile6.jpg&quot;
+         data-image=&quot;images/big/tile6.jpg&quot;
+         data-description=&quot;This is butterfly&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Boat&quot;
+         src=&quot;images/thumbs/tile7.jpg&quot;
+         data-image=&quot;images/big/tile7.jpg&quot;
+         data-description=&quot;This is a boat&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Woman&quot;
+         src=&quot;images/thumbs/tile8.jpg&quot;
+         data-image=&quot;images/big/tile8.jpg&quot;
+         data-description=&quot;This is a woman&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Cup Of Coffee&quot;
+         src=&quot;images/thumbs/tile9.jpg&quot;
+         data-image=&quot;images/big/tile9.jpg&quot;
+         data-description=&quot;This is cup of coffee&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Iphone Back&quot;
+         src=&quot;images/thumbs/tile10.jpg&quot;
+         data-image=&quot;images/big/tile10.jpg&quot;
+         data-description=&quot;This is iphone back&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Lemon Slice&quot;
+         src=&quot;images/thumbs/tile1.jpg&quot;
+         data-image=&quot;images/big/tile1.jpg&quot;
+         data-description=&quot;This is a Lemon Slice&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Peppers&quot;
+         src=&quot;images/thumbs/tile2.jpg&quot;
+         data-image=&quot;images/big/tile2.jpg&quot;
+         data-description=&quot;Those are peppers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Keys&quot;
+         src=&quot;images/thumbs/tile3.jpg&quot;
+         data-image=&quot;images/big/tile3.jpg&quot;
+         data-description=&quot;Those are keys&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Friuts in cup&quot;
+         src=&quot;images/thumbs/tile4.jpg&quot;
+         data-image=&quot;images/big/tile4.jpg&quot;
+         data-description=&quot;Those are friuts in a cup&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Yellow Flowers&quot;
+         src=&quot;images/thumbs/tile5.jpg&quot;
+         data-image=&quot;images/big/tile5.jpg&quot;
+         data-description=&quot;Those are yellow flowers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Butterfly&quot;
+         src=&quot;images/thumbs/tile6.jpg&quot;
+         data-image=&quot;images/big/tile6.jpg&quot;
+         data-description=&quot;This is butterfly&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Boat&quot;
+         src=&quot;images/thumbs/tile7.jpg&quot;
+         data-image=&quot;images/big/tile7.jpg&quot;
+         data-description=&quot;This is a boat&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Woman&quot;
+         src=&quot;images/thumbs/tile8.jpg&quot;
+         data-image=&quot;images/big/tile8.jpg&quot;
+         data-description=&quot;This is a woman&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Cup Of Coffee&quot;
+         src=&quot;images/thumbs/tile9.jpg&quot;
+         data-image=&quot;images/big/tile9.jpg&quot;
+         data-description=&quot;This is cup of coffee&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Iphone Back&quot;
+         src=&quot;images/thumbs/tile10.jpg&quot;
+         data-image=&quot;images/big/tile10.jpg&quot;
+         data-description=&quot;This is iphone back&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Lemon Slice&quot;
+         src=&quot;images/thumbs/tile1.jpg&quot;
+         data-image=&quot;images/big/tile1.jpg&quot;
+         data-description=&quot;This is a Lemon Slice&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Peppers&quot;
+         src=&quot;images/thumbs/tile2.jpg&quot;
+         data-image=&quot;images/big/tile2.jpg&quot;
+         data-description=&quot;Those are peppers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Keys&quot;
+         src=&quot;images/thumbs/tile3.jpg&quot;
+         data-image=&quot;images/big/tile3.jpg&quot;
+         data-description=&quot;Those are keys&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Friuts in cup&quot;
+         src=&quot;images/thumbs/tile4.jpg&quot;
+         data-image=&quot;images/big/tile4.jpg&quot;
+         data-description=&quot;Those are friuts in a cup&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Yellow Flowers&quot;
+         src=&quot;images/thumbs/tile5.jpg&quot;
+         data-image=&quot;images/big/tile5.jpg&quot;
+         data-description=&quot;Those are yellow flowers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Butterfly&quot;
+         src=&quot;images/thumbs/tile6.jpg&quot;
+         data-image=&quot;images/big/tile6.jpg&quot;
+         data-description=&quot;This is butterfly&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Boat&quot;
+         src=&quot;images/thumbs/tile7.jpg&quot;
+         data-image=&quot;images/big/tile7.jpg&quot;
+         data-description=&quot;This is a boat&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Woman&quot;
+         src=&quot;images/thumbs/tile8.jpg&quot;
+         data-image=&quot;images/big/tile8.jpg&quot;
+         data-description=&quot;This is a woman&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Cup Of Coffee&quot;
+         src=&quot;images/thumbs/tile9.jpg&quot;
+         data-image=&quot;images/big/tile9.jpg&quot;
+         data-description=&quot;This is cup of coffee&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Iphone Back&quot;
+         src=&quot;images/thumbs/tile10.jpg&quot;
+         data-image=&quot;images/big/tile10.jpg&quot;
+         data-description=&quot;This is iphone back&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Lemon Slice&quot;
+         src=&quot;images/thumbs/tile1.jpg&quot;
+         data-image=&quot;images/big/tile1.jpg&quot;
+         data-description=&quot;This is a Lemon Slice&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Peppers&quot;
+         src=&quot;images/thumbs/tile2.jpg&quot;
+         data-image=&quot;images/big/tile2.jpg&quot;
+         data-description=&quot;Those are peppers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Keys&quot;
+         src=&quot;images/thumbs/tile3.jpg&quot;
+         data-image=&quot;images/big/tile3.jpg&quot;
+         data-description=&quot;Those are keys&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Friuts in cup&quot;
+         src=&quot;images/thumbs/tile4.jpg&quot;
+         data-image=&quot;images/big/tile4.jpg&quot;
+         data-description=&quot;Those are friuts in a cup&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Yellow Flowers&quot;
+         src=&quot;images/thumbs/tile5.jpg&quot;
+         data-image=&quot;images/big/tile5.jpg&quot;
+         data-description=&quot;Those are yellow flowers&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Butterfly&quot;
+         src=&quot;images/thumbs/tile6.jpg&quot;
+         data-image=&quot;images/big/tile6.jpg&quot;
+         data-description=&quot;This is butterfly&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Boat&quot;
+         src=&quot;images/thumbs/tile7.jpg&quot;
+         data-image=&quot;images/big/tile7.jpg&quot;
+         data-description=&quot;This is a boat&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Woman&quot;
+         src=&quot;images/thumbs/tile8.jpg&quot;
+         data-image=&quot;images/big/tile8.jpg&quot;
+         data-description=&quot;This is a woman&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Cup Of Coffee&quot;
+         src=&quot;images/thumbs/tile9.jpg&quot;
+         data-image=&quot;images/big/tile9.jpg&quot;
+         data-description=&quot;This is cup of coffee&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;http://unitegallery.net&quot;&gt;
+    &lt;img alt=&quot;Iphone Back&quot;
+         src=&quot;images/thumbs/tile10.jpg&quot;
+         data-image=&quot;images/big/tile10.jpg&quot;
+         data-description=&quot;This is iphone back&quot;
+         style=&quot;display:none&quot;&gt;
+    &lt;/a&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+
+    jQuery(document).ready(function(){
+
+      jQuery(&quot;#gallery&quot;).unitegallery({
+        tiles_type:&quot;justified&quot;
+      });
+
+    });
+
+  &lt;/script&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+4.1.html
+           </code></pre>
+
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

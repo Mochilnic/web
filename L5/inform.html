@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab3</title>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="btn btn-outline-primary" href="../L1/page_of_lab1.html">Лабораторна робота 1</a>
+        <a class="btn btn-outline-primary" href="../L2/lab2.html">Лабораторна робота 2</a>
+        <a class="btn btn-outline-primary" href="../L3/lab3.html">Лабораторна робота 3</a>
+        <a class="btn btn-outline-primary" href="../L4/report.html">Лабораторна робота 4</a>
+        <a class="btn btn-outline-primary" href="lab5.html">Лабораторна робота 5</a>
+        <a class="btn btn-outline-primary" href="../L6/lab6.html">Лабораторна робота 6</a>
+        <a class="btn btn-outline-primary" href="../L7/lab7.html">Лабораторна робота 7</a>
+        <a class="mt-1 btn btn-outline-primary" href="../L8/frames.html">Лабораторна робота 8</a>
+        <a class="btn btn-outline-primary" href="../L9/lab9.html">Лабораторна робота 9</a>
+        <a class="mt-1 btn btn-outline-primary" href="../pages/mainpage.php">Сторінка сайту</a>
+      </nav>
+    </div>
+
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="btn btn-outline-secondary" href="zad5.html">Постановка задачі лабораторної роботи 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="dinam.html">Динамічні елементи 3 пункту </a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="#">Галерея UnitGallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="photo.html">Фотогалерея</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="slidephoto.html">Слайдер фотографій</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="slidevideo.html">Слайдер відео</a>
+      </li>
+            <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="buttons.html">Кнопки соц мереж</a>
+      </li>
+      <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="inform.html">Інформери</a>
+      </li>
+            <li class="nav-item">
+        <a class="mt-1 btn btn-outline-secondary" href="conc.html">Висновки</a>
+      </li>
+    </ul><div class="mr-2 float-right" style="width: 65%; margin-top: -360px">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Інформери</h5>
+            <img src="../L5/imgforlab/6.png">
+            <pre><code>
+              &lt;!DOCTYPE html&gt;
+  &lt;head&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;!-- Погода --&gt;
+&lt;div id=&quot;MeteoInformerWrapOuther&quot;&gt;
+&lt;div id=&quot;MeteoInformerWrap&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://meteo.ua/var/informers.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+makeMeteoInformer(&quot;https://meteo.ua/informer/get.php?cities=34&amp;w=158&amp;lang=ru&amp;rnd=1&amp;or=vert&amp;clr=0&amp;dt=today&amp;style=modern&quot;,158,369);
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Часы --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.24webclock.com/clock24.js&quot;&gt;&lt;/script&gt;
+&lt;table border=&quot;0&quot; bgcolor=&quot;#3D700B&quot; cellspacing=1 cellpadding=3 class=&quot;clock24st&quot; style=&quot;line-height:14px; padding:0;&quot;&gt;
+&lt;tr&gt;&lt;td bgcolor=&quot;#88ED23&quot; class=&quot;clock24std&quot; style=&quot;font-family:arial; font-size:12px;&quot;&gt;&lt;a href=&quot;http://www.24webclock.com/&quot;&gt;&lt;img src=&quot;http://www.24webclock.com/ico.gif&quot; width=&quot;14&quot; height=&quot;14&quot; border=&quot;0&quot; alt=&quot;html clock code&quot; align=&quot;left&quot; hspace=&quot;2&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://www.24webclock.com/ru/&quot; style=&quot;text-decoration:none;&quot;&gt;&lt;span class=&quot;clock24s&quot; id=&quot;clock24_96816&quot; style=&quot;color:#3D700B;&quot;&gt;бесплатные часы для сайта&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var clock24_96816 = new clock24('96816',120,'%W, %dd.%mm.%yyyy %hh:%nn','ru');
+clock24_96816.daylight('UA'); clock24_96816.refresh();
+&lt;/script&gt;
+
+&lt;!-- Валюты --&gt;
+&lt;iframe src=&quot;https://ru.widgets.investing.com/top-cryptocurrencies?theme=lightTheme&amp;roundedCorners=true&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;div class=&quot;poweredBy&quot; style=&quot;font-family: Arial, Helvetica, sans-serif;&quot;&gt;Предоставлено &lt;a href=&quot;https://ru.investing.com?utm_source=WMT&amp;amp;utm_medium=referral&amp;amp;utm_campaign=TOP_CRYPTOCURRENCIES&amp;amp;utm_content=Footer%20Link&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Investing.com&lt;/a&gt;&lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  6.html
+           </code></pre>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

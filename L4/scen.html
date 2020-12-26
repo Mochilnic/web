@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="scen.jpg">
+    <pre><code>
+      tasks.html
+
+      &lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr"&gt;
+&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+&lt;link rel="stylesheet" href="style.css" type="text/css"/&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Каталог&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"&gt;
+  &lt;h5 class="my-0 mr-md-auto font-weight-normal"&gt;Пекарня&lt;/h5&gt;
+  &lt;form autocomplete="off" action="../action_page.php"&gt;
+    &lt;div class="autocomplete" style="width:300px;"&gt;
+      &lt;input id="myInput" type="text" name="words" placeholder="Введите текст"&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;nav class="my-2 my-md-0 mr-md-3"&gt;
+    &lt;a class="p-2 text-dark" href="about.html"&gt;Про нас&lt;/a&gt;
+    &lt;a class="p-2 text-dark" href="mainpage.html"&gt;Основна сторінка&lt;/a&gt;
+    &lt;a class="p-2 text-dark" href="catalog.html"&gt;Каталог&lt;/a&gt;
+    &lt;a class="p-2 text-dark" href="#"&gt;Служба підтримки&lt;/a&gt;
+    &lt;a class="p-2 text-dark" href="log.html"&gt;Особистий кабінет&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+&lt;script&gt;
+function autocomplete(inp, arr) {
+  var currentFocus;
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      this.parentNode.appendChild(a);
+      for (i = 0; i &lt; arr.length; i++) {
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          b = document.createElement("DIV");
+          b.innerHTML = "&lt;strong&gt;" + arr[i].substr(0, val.length) + "&lt;/strong&gt;";
+          b.innerHTML += arr[i].substr(val.length);
+          b.innerHTML += "&lt;input type='hidden' value='" + arr[i] + "'&gt;";
+          b.addEventListener("click", function(e) {
+              inp.value = this.getElementsByTagName("input")[0].value;
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  function closeAllLists(elmnt) {
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i &lt; x.length; i++) {
+      if (elmnt != x[i] &amp;&amp; elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+var words = ["Здібні булки","Круасани","Слойки","Тістечка","Торти","Печиво","Хліб"];
+
+autocomplete(document.getElementById("myInput"), words);
+&lt;/script&gt;
+&lt;h1 class="head"&gt;Список продукції&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Здобні булки&lt;/li&gt;
+  &lt;li&gt;Круасани&lt;/li&gt;
+  &lt;li&gt;Слойки&lt;/li&gt;
+  &lt;li&gt;Тістечка&lt;/li&gt;
+  &lt;li&gt;Торти&lt;/li&gt;
+  &lt;li&gt;Печиво&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Хліб&lt;/b&gt;&lt;i&gt;(звичайний та бездріжжджовий)&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="imager"&gt;
+&lt;img src="https://бизнесидея.рф/wp-content/uploads/2018/01/biznes-plan-dlya-mini-pekarni.jpg" id="breadpic"&gt;
+&lt;img src="https://moybiznes.org/wp-content/uploads/bulochnaya-678x381.jpg" id="pikcha2"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+    </code></pre>
+  </body>
+  </html>
